@@ -1,2 +1,3 @@
 # Data Warehouse and Analytics Project
-Building a modern Data Warehouse with SQL Server, including ETL and Data Analytics
+Welcome to my first **Data Warehouse and Data Analytics Project** Repository
+This project, designed as a portfolio, demonstrates complete Data Warehousing and analytics solutions
