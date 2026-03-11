@@ -1,8 +1,14 @@
--- ======================================================
--- Data Warehouse: Bronze Layer Complete Build
--- Author: Geu Ghai
--- Description: FULL BUILD - Drops and recreates all tables
--- ======================================================
+
+/* =====================================================================================
+Script Purpose: 
+This script creates and loads data into the 'bronze' schema from external csv files.
+It performs the following:
+- Drops (if it exists) and recreates all tables.
+- Truncates the bronze tables before loading data.
+- UseS BULK INSERT command to load data from csv files to bronze tables
+- Creates staging schema to load problematic orders csv file into bronze table
+- Validates data completeness and schema checks
+ ======================================================================================*/
 
 -- ======================================================
 -- SECTION 1: CREATE STAGING SCHEMA (if not exists)
