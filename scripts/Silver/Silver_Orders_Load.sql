@@ -1,6 +1,16 @@
--- ======================================================
--- SILVER LAYER: Clean and Load ORDERS Only
--- ======================================================
+
+/* ================================================================================
+CLEAN AND LOAD ORDER DATA FROM BRONZE TO SILVER LAYER
+-Performs complex data cleansing including fixing future dates, 
+capping impossible profits at 30% of sales, removing exact duplicates
+and combining split orders (same product within same order)
+
+-Verify Order Data Cleansing Results
+-Comprehensive validation including row count comparison, checking for 
+duplicate products in same order, future dates, impossible profits, exact duplicates
+and displaying fixed orders
+=====================================================================================*/
+
 USE DataWarehouse;
 GO
 
