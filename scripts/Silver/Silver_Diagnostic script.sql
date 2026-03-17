@@ -10,6 +10,7 @@ FROM bronze.Crm_Customers
 GROUP BY Customer_ID
 HAVING COUNT(*) >1 OR Customer_ID IS NULL;
 
+
 /* COLUMN 2: Customer_Name: String Quality - Hidden Characters
 -Customer_Name should not have controlling charact6ers unwanted spaces. 
 -The first letter of each name should also be UPPER CASE */
@@ -18,7 +19,6 @@ SELECT
 COUNT(*) Special_Characters
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
-
 
 -- Find names starting with lowercase
 SELECT 
@@ -36,7 +36,6 @@ SELECT
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[a-z][A-Z]%' 
    OR Customer_Name LIKE '%[A-Z][A-Z][a-z]%';  -- Multiple caps in a row
-
 
 -- Leading/trailing spaces cause mismatches in JOINs 
 
