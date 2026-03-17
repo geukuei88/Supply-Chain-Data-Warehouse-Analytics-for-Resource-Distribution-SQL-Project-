@@ -1,3 +1,7 @@
+/* =======================================================================
+PART A: DIAGONISIS OF CUSTOMERS TABLE
+===========================================================================*/
+
 /* DIAGNOSING CUSTOMERS TABLE
 COLUMN 1: Customer_ID: Primary Key Integrity:
 -The Customer_ID should be unique and never null. 
@@ -123,3 +127,7 @@ SELECT
     MIN(LEN(Customer_Name)) MinNameLength,
     MAX(LEN(Customer_Name)) MaxNameLength
 FROM bronze.Crm_Customers;
+
+/* =======================================================================
+PART B: DIAGONISIS OF ORDERS TABLE
+===========================================================================*/
