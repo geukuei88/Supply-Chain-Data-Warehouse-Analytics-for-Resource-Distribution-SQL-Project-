@@ -2,8 +2,7 @@
 PART A: DIAGONISIS OF CUSTOMERS TABLE
 ===========================================================================*/
 
-/* DIAGNOSING CUSTOMERS TABLE
-COLUMN 1: Customer_ID: Primary Key Integrity:
+/* COLUMN 1: Customer_ID: Primary Key Integrity:
 -The Customer_ID should be unique and never null. 
 -Why? Because it is the PK that links to Orders. Would break relationships with Orders*/
 
@@ -85,7 +84,6 @@ SELECT
 FROM bronze.Crm_Customers
 GROUP BY Country
 ORDER BY Occurrence DESC;
-
 
 
 /* COLUMN 5: Geographic Consistency 
