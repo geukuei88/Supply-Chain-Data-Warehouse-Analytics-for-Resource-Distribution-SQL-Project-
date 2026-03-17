@@ -31,14 +31,15 @@ SELECT
 FROM bronze.Crm_Customers
 WHERE ASCII(LEFT(Customer_Name, 1)) BETWEEN 97 AND 122;  -- a-z
 
--- Find names with uppercase in middle (camelCase)
+   -- Find names with uppercase in middle (camelCase) excluding multiple words
 SELECT 
     Customer_ID,
     Customer_Name,
     'Internal capital' AS Occurrence
 FROM bronze.Crm_Customers
-WHERE Customer_Name LIKE '%[a-z][A-Z]%' 
-   OR Customer_Name LIKE '%[A-Z][A-Z][a-z]%';  -- Multiple caps in a row
+WHERE Customer_Name LIKE '%[a-z][A-Z]%'  -- Lowercase followed immediately by uppercase
+  AND Customer_Name NOT LIKE '% %'       -- Exclude names with spaces (multiple words)
+  AND Customer_Name NOT LIKE '%-%';       -- Optional: also exclude hyphenated names
 
 -- Find leading/trailing spaces that may cause mismatches in JOINs 
 SELECT 
