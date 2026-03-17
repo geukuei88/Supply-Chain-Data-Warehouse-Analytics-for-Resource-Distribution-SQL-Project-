@@ -6,6 +6,7 @@ PART A: DIAGONISIS OF CUSTOMERS TABLE
 -The Customer_ID should be unique and never null. 
 -Why? Because it is the PK that links to Orders. Would break relationships with Orders*/
 
+-- Find duplicates and nulls in Custimer_ID
 SELECT
 Customer_ID,
 COUNT(*) as Total_Duplicates
@@ -13,10 +14,10 @@ FROM bronze.Crm_Customers
 GROUP BY Customer_ID
 HAVING COUNT(*) >1 OR Customer_ID IS NULL;
 
-/* COLUMN 2: Customer_Name: String Quality - Hidden Characters
--Customer_Name should not have controlling charact6ers unwanted spaces. 
--The first letter of each name should also be UPPER CASE */
+/* COLUMN 2: Customer_Name: String Quality 
+-Customer_Name should not have hidden Characters, unwanted spaces and improper casing */
 
+-- Find hidden characters in Customer_Name 
 SELECT 
 COUNT(*) as Special_Characters
 FROM bronze.Crm_Customers
@@ -39,8 +40,7 @@ FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[a-z][A-Z]%' 
    OR Customer_Name LIKE '%[A-Z][A-Z][a-z]%';  -- Multiple caps in a row
 
--- Leading/trailing spaces cause mismatches in JOINs 
-
+-- Find leading/trailing spaces that may cause mismatches in JOINs 
  SELECT 
  Customer_Name
  FROM bronze.Crm_Customers
@@ -52,6 +52,7 @@ WHERE Customer_Name LIKE '%[a-z][A-Z]%'
  -Check Segment against expected values (Consumer, Corporate, Home Office)
  */
 
+-- Find invalid Segment Values that are not within the Segment domain
 SELECT 'Invalid Segment Values' as Check_Name,
        Segment,
        COUNT(*) as Occurrences
@@ -59,7 +60,7 @@ FROM bronze.Crm_Customers
 WHERE Segment NOT IN ('Consumer', 'Corporate', 'Home Office')
 GROUP BY Segment;
  
- -- Leading/trailing spaces 
+ -- Leading/trailing spaces in Segment
  SELECT 
  Segment
  FROM bronze.Crm_Customers
@@ -68,6 +69,7 @@ GROUP BY Segment;
 /* COLUMN 4: Country: Domain Validation
 - Check Country against expected country (United States) */
 
+-- Find the invald country values
 SELECT 
     'Invalid Country Values' as Check_Name,
     Country,
@@ -104,6 +106,7 @@ ORDER BY City, State;
 /* COLUMN 7: Postal Code: Data Type and Format Validation
 -Check if Postal_Code contains non-numeric values */
 
+-- Find non-numeric values and negative postal codes 
 SELECT 'Invalid Postal_Code' as CheckName,
        COUNT(*) Occurrence
 FROM bronze.Crm_Customers
@@ -115,15 +118,15 @@ WHERE TRY_CAST(Postal_Code AS INT) IS NULL
 -Understand the data shape to help me spot outliers and anomalies */
 
 SELECT 
-    COUNT(*) as TotalRows,
-    COUNT(DISTINCT Customer_ID) UniqueCustomers,
-    COUNT(DISTINCT Segment) UniqueSegments,
-    COUNT(DISTINCT Country) UniqueCountries,
-    COUNT(DISTINCT City) UniqueCities,
+    COUNT(*) as Total_Rows,
+    COUNT(DISTINCT Customer_ID) Unique_Customers,
+    COUNT(DISTINCT Segment) Unique_Segments,
+    COUNT(DISTINCT Country) Unique_Countries,
+    COUNT(DISTINCT City) Unique_Cities,
     COUNT(DISTINCT State) UniqueStates,
-    COUNT(DISTINCT Region) UniqueRegions,
-    MIN(LEN(Customer_Name)) MinNameLength,
-    MAX(LEN(Customer_Name)) MaxNameLength
+    COUNT(DISTINCT Region) Unique_Regions,
+    MIN(LEN(Customer_Name)) Min_Name_Length,
+    MAX(LEN(Customer_Name)) Max_Name_Length
 FROM bronze.Crm_Customers;
 
 /* =======================================================================
