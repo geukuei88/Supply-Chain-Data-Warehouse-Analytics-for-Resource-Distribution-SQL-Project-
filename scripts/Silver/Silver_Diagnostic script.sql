@@ -23,9 +23,6 @@ COUNT(*) as Special_Characters
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
 
-
-
-
 -- Find names that start with lowercase
 SELECT 
     Customer_ID,
@@ -80,11 +77,6 @@ FROM bronze.Crm_Customers
 WHERE Country != 'United States'
     AND Country IS NOT NULL
 GROUP BY Country;
-
-
-
-
-
 
 -- Or See exactly what's in my Country column
 SELECT 
