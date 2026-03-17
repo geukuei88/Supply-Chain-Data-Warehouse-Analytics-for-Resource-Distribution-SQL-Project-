@@ -23,7 +23,6 @@ COUNT(*) as Special_Characters
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
 
--- Find names starting with lowercase
 SELECT 
     Customer_ID,
     Customer_Name,
