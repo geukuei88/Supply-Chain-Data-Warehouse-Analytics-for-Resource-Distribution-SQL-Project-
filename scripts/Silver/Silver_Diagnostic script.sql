@@ -15,10 +15,9 @@ HAVING COUNT(*) >1 OR Customer_ID IS NULL;
 -The first letter of each name should also be UPPER CASE */
 
 SELECT 
-COUNT(*) Special_Characters
+COUNT(*) as Special_Characters
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
-
 
 -- Find names starting with lowercase
 SELECT 
@@ -32,11 +31,10 @@ WHERE ASCII(LEFT(Customer_Name, 1)) BETWEEN 97 AND 122;  -- a-z
 SELECT 
     Customer_ID,
     Customer_Name,
-    'Internal capital' Issue
+    'Internal capital' occurrence
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[a-z][A-Z]%' 
    OR Customer_Name LIKE '%[A-Z][A-Z][a-z]%';  -- Multiple caps in a row
-
 
 -- Leading/trailing spaces cause mismatches in JOINs 
 
@@ -112,8 +110,7 @@ WHERE TRY_CAST(Postal_Code AS INT) IS NULL
 
 
 /* DATA PROFILE SUMMARY
--Understand the shape of your data
--Helps spot outliers and anomalies */
+-Understand the data shape to help me spot outliers and anomalies */
 
 SELECT 
     COUNT(*) as TotalRows,
