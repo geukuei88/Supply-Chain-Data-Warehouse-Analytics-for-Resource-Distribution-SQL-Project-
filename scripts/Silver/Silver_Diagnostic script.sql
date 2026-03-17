@@ -38,8 +38,8 @@ SELECT
     'Internal capital' AS Occurrence
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[a-z][A-Z]%'  -- Lowercase followed immediately by uppercase
-  AND Customer_Name NOT LIKE '% %'       -- Exclude names with spaces (multiple words)
-  AND Customer_Name NOT LIKE '%-%';       -- Optional: also exclude hyphenated names
+  AND Customer_Name NOT LIKE '% %'       -- Excludes names with spaces (multiple words)
+  AND Customer_Name NOT LIKE '%-%';       -- Excludes hyphenated names
 
 -- Find leading/trailing spaces that may cause mismatches in JOINs 
 SELECT 
