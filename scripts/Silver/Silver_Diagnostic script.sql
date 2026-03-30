@@ -42,7 +42,7 @@ WHERE Customer_Name LIKE '%[a-z][A-Z]%'  -- Lowercase followed immediately by up
   AND Customer_Name NOT LIKE '%-%';       -- Excludes hyphenated names
 
 -- Find leading/trailing spaces that may cause mismatches in JOINs 
-SELECT 
+SELECT
     Customer_Name
 FROM bronze.Crm_Customers
 WHERE Customer_Name <> TRIM(Customer_Name);
