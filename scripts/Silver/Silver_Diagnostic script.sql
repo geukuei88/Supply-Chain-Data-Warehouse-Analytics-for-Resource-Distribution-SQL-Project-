@@ -33,7 +33,7 @@ HAVING COUNT(*) > 1 OR Customer_ID IS NULL;
 SELECT 
     COUNT(*) AS Special_Characters
 FROM bronze.Crm_Customers
-WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
+WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%';
 
 -- Names starting with lowercase
 SELECT 
