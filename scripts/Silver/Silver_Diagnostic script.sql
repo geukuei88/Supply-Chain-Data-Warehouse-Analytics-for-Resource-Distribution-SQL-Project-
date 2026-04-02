@@ -1,133 +1,152 @@
-/* =======================================================================
-PART A: DIAGONISIS OF CUSTOMERS TABLE
-============================================================================*/
+/* ============================================================================
+DATA QUALITY ASSESSMENT: CUSTOMERS TABLE
+Project: Supply Chain Data Warehouse & Analytics for Resource Distribution
+Author: Geu Kuei
+Description:
+This script performs data quality checks and validation on the Customers table
+to ensure consistency, reliability, and suitability for analytical reporting.
 
-/* COLUMN 1: Customer_ID: Primary Key Integrity:
--The Customer_ID should be unique and never null. 
--Why? Because it is the PK that links to Orders. Would break relationships with Orders*/
+These checks are essential for building a robust data warehouse and supporting
+Monitoring & Evaluation (M&E) processes in data-driven environments.
+============================================================================ */
 
--- Find duplicates and nulls in Custimer_ID
+/* ----------------------------------------------------------------------------
+1. PRIMARY KEY VALIDATION: Customer_ID
+- Ensure uniqueness and non-null values
+- Critical for maintaining relationships with Orders table
+---------------------------------------------------------------------------- */
+
 SELECT
-Customer_ID,
-COUNT(*) as Total_Duplicates
+    Customer_ID,
+    COUNT(*) AS Duplicate_Count
 FROM bronze.Crm_Customers
 GROUP BY Customer_ID
-HAVING COUNT(*) >1 OR Customer_ID IS NULL;
+HAVING COUNT(*) > 1 OR Customer_ID IS NULL;
 
-/* COLUMN 2: Customer_Name: String Quality 
--Customer_Name should not have hidden Characters, unwanted spaces and improper casing */
 
--- Find hidden characters in Customer_Name 
+/* ----------------------------------------------------------------------------
+2. STRING QUALITY CHECK: Customer_Name
+- Detect hidden characters, improper casing, and unwanted spaces
+---------------------------------------------------------------------------- */
+
+-- Hidden/non-printable characters
 SELECT 
-COUNT(*) as Special_Characters
+    COUNT(*) AS Special_Characters
 FROM bronze.Crm_Customers
 WHERE Customer_Name LIKE '%[' + CHAR(0) + '-' + CHAR(31) + ']%' ESCAPE '\';
 
--- Find names that start with lowercase
+-- Names starting with lowercase
 SELECT 
     Customer_ID,
     Customer_Name,
-    'Starts with lowercase' AS Occurrence
+    'Starts with lowercase' AS Issue
 FROM bronze.Crm_Customers
-WHERE ASCII(LEFT(Customer_Name, 1)) BETWEEN 97 AND 122;  -- a-z
+WHERE ASCII(LEFT(Customer_Name, 1)) BETWEEN 97 AND 122;
 
-   -- Find names with uppercase in middle (camelCase) excluding multiple words
+-- Improper casing (camelCase in single-word names)
 SELECT 
     Customer_ID,
     Customer_Name,
-    'Internal capital' AS Occurrence
+    'Internal capital' AS Issue
 FROM bronze.Crm_Customers
-WHERE Customer_Name LIKE '%[a-z][A-Z]%'  -- Lowercase followed immediately by uppercase
-  AND Customer_Name NOT LIKE '% %'       -- Excludes names with spaces (multiple words)
-  AND Customer_Name NOT LIKE '%-%';       -- Excludes hyphenated names
+WHERE Customer_Name LIKE '%[a-z][A-Z]%'
+  AND Customer_Name NOT LIKE '% %'
+  AND Customer_Name NOT LIKE '%-%';
 
--- Find leading/trailing spaces that may cause mismatches in JOINs 
+-- Leading/trailing spaces
 SELECT
     Customer_Name
 FROM bronze.Crm_Customers
 WHERE Customer_Name <> TRIM(Customer_Name);
 
-/* COLUMN 3: Segment: Domain Value Validation
-   - The first letter of each segment should be UPPER CASE
-   - Check Segment against expected values (Consumer, Corporate, Home Office) */
 
--- Find invalid Segment Values that are not within the Segment domain
+/* ----------------------------------------------------------------------------
+3. DOMAIN VALIDATION: Segment
+- Ensure values fall within expected categories
+---------------------------------------------------------------------------- */
+
 SELECT 
-    'Invalid Segment Values' AS Check_Name,
     Segment,
     COUNT(*) AS Occurrences
 FROM bronze.Crm_Customers
 WHERE Segment NOT IN ('Consumer', 'Corporate', 'Home Office')
 GROUP BY Segment;
 
--- Leading/trailing spaces in Segment
+-- Check for unwanted spaces
 SELECT 
     Segment
 FROM bronze.Crm_Customers
 WHERE Segment <> TRIM(Segment);
 
-/* COLUMN 4: Country: Domain Validation
-   - Check Country against expected country (United States) */
 
--- Find the invalid country values
+/* ----------------------------------------------------------------------------
+4. DOMAIN VALIDATION: Country
+- Validate expected geographic consistency
+---------------------------------------------------------------------------- */
+
 SELECT 
-    'Invalid Country Values' AS Check_Name,
     Country,
-    COUNT(*) AS Occurrence
+    COUNT(*) AS Occurrences
 FROM bronze.Crm_Customers
 WHERE Country != 'United States'
-    AND Country IS NOT NULL
+  AND Country IS NOT NULL
 GROUP BY Country;
 
--- Or See exactly what's in my Country column
+-- Full distribution overview
 SELECT 
     Country,
-    COUNT(*) as Occurrence
+    COUNT(*) AS Occurrences
 FROM bronze.Crm_Customers
 GROUP BY Country
-ORDER BY Occurrence DESC;
+ORDER BY Occurrences DESC;
 
-/* COLUMN 5: Geographic Consistency 
-City and State combinations should make sense
--"Springfield" exists in multiple states - that's OK!
--But "Los Angeles, Texas" would be wrong */ 
+
+/* ----------------------------------------------------------------------------
+5. GEOGRAPHIC CONSISTENCY CHECK
+- Validate logical City-State combinations
+---------------------------------------------------------------------------- */
 
 SELECT 
     City,
     State,
-    COUNT(*) Occurrences
+    COUNT(*) AS Occurrences
 FROM bronze.Crm_Customers
 GROUP BY City, State
 HAVING COUNT(*) > 1
 ORDER BY City, State;
 
 
-/* COLUMN 7: Postal Code: Data Type and Format Validation
--Check if Postal_Code contains non-numeric values */
-
--- Find non-numeric values and negative postal codes 
-SELECT 'Invalid Postal_Code' as CheckName,
-       COUNT(*) Occurrence
-FROM bronze.Crm_Customers
-WHERE TRY_CAST(Postal_Code AS INT) IS NULL
-   OR Postal_Code < 0;  -- Negative postal codes?
-
-
-/* DATA PROFILE SUMMARY
--Understand the data shape to help me spot outliers and anomalies */
+/* ----------------------------------------------------------------------------
+6. POSTAL CODE VALIDATION
+- Ensure numeric and valid values
+---------------------------------------------------------------------------- */
 
 SELECT 
-    COUNT(*) as Total_Rows,
-    COUNT(DISTINCT Customer_ID) Unique_Customers,
-    COUNT(DISTINCT Segment) Unique_Segments,
-    COUNT(DISTINCT Country) Unique_Countries,
-    COUNT(DISTINCT City) Unique_Cities,
-    COUNT(DISTINCT State) UniqueStates,
-    COUNT(DISTINCT Region) Unique_Regions,
-    MIN(LEN(Customer_Name)) Min_Name_Length,
-    MAX(LEN(Customer_Name)) Max_Name_Length
+    COUNT(*) AS Invalid_Postal_Codes
+FROM bronze.Crm_Customers
+WHERE TRY_CAST(Postal_Code AS INT) IS NULL
+   OR Postal_Code < 0;
+
+
+/* ----------------------------------------------------------------------------
+7. DATA PROFILING SUMMARY
+- Provides an overview of dataset structure and variability
+---------------------------------------------------------------------------- */
+
+SELECT 
+    COUNT(*) AS Total_Rows,
+    COUNT(DISTINCT Customer_ID) AS Unique_Customers,
+    COUNT(DISTINCT Segment) AS Unique_Segments,
+    COUNT(DISTINCT Country) AS Unique_Countries,
+    COUNT(DISTINCT City) AS Unique_Cities,
+    COUNT(DISTINCT State) AS Unique_States,
+    COUNT(DISTINCT Region) AS Unique_Regions,
+    MIN(LEN(Customer_Name)) AS Min_Name_Length,
+    MAX(LEN(Customer_Name)) AS Max_Name_Length
 FROM bronze.Crm_Customers;
 
-/* =======================================================================
-PART B: DIAGONISIS OF ORDERS TABLE
-===========================================================================*/
+
+/* ============================================================================
+NEXT STEP:
+Proceed to data quality assessment for Orders table
+============================================================================ */
