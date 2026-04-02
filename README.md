@@ -106,4 +106,4 @@ Develop a Jupyter Notebook-based analytics to deliver detailed insights into:
   This project is licensed under [MIT License]. You are free to use, modify and share this project provided that you give  proper attributions.
 
   # About Me
-  My name is Geu Ghai and I am an ALX Data Engineering learner. I am transitioning from Mathematics field to Data Engineering. 
+  My name is Geu Kuei and I am an ALX Data Engineering fellow. I am transitioning from Mathematics field to Data Engineering. 
