@@ -1,14 +1,13 @@
-# Supply Chain Data Warehouse Analytics for Resource Distribution SQL Project
-Welcome to my first **Data Warehouse and Data Analytics Project** Repository.
-This project, designed as a portfolio, demonstrates complete Data Warehousing and analytics solutions.
-
 # Supply Chain Data Warehouse & Analytics for Resource Distribution (SQL Project)
 
 ## Project Overview
-Efficient resource distribution is critical in both business and humanitarian operations. This project demonstrates how a SQL-based data warehouse can be designed to support data-driven decision-making in supply chains and resource allocation.
+Welcome to my Data Warehouse and Data Analytics Project.
 
-The project simulates real-world systems by structuring raw data into relational tables and generating insights on demand patterns, delivery performance, and cost efficiency.
+This project demonstrates the design and implementation of a complete SQL-based data warehouse and analytics solution. It simulates real-world supply chain systems to support data-driven decision-making in resource distribution, logistics, and program efficiency.
 
+Efficient resource distribution is critical in both business and humanitarian operations. This project shows how structured data systems can generate insights on demand patterns, delivery performance, and cost efficiency.
+
+---
 
 ## Objectives
 - Design and implement a relational data warehouse using SQL  
@@ -17,6 +16,7 @@ The project simulates real-world systems by structuring raw data into relational
 - Support decision-making in supply chain and resource distribution  
 - Demonstrate concepts applicable to Monitoring & Evaluation (M&E)  
 
+---
 
 ## Tools & Technologies
 - SQL  
@@ -24,14 +24,25 @@ The project simulates real-world systems by structuring raw data into relational
 - Excel / Power BI  
 - Jupyter Notebook  
 
+---
 
 ## Data Structure
-The dataset was transformed into a relational data model consisting of:
+The dataset (Global Superstore from Kaggle) was transformed into a relational data model consisting of:
 
 - **Customers Table** → Represents beneficiaries or end users  
 - **Orders Table** → Represents transactions or distribution activities  
 - **Products Table** → Represents items or resources being distributed  
 
+---
+
+## Data Engineering Process
+- **Data Acquisition**: Imported Global Superstore dataset (CSV)  
+- **Data Splitting**: Separated into Orders, Customers, and Products tables  
+- **Data Cleaning**: Resolved missing values, duplicates, and inconsistencies  
+- **Data Integration**: Built a structured relational model optimized for analysis  
+- **Documentation**: Developed a clear and user-friendly data model  
+
+---
 
 ## Key Analysis Performed
 - Demand analysis across regions and customer segments  
@@ -39,22 +50,35 @@ The dataset was transformed into a relational data model consisting of:
 - Cost and profit efficiency analysis  
 - Identification of high-demand products and regions  
 
+---
 
 ## Key Insights
-- Identified regions with high demand to improve resource allocation  
-- Analyzed delivery patterns to highlight inefficiencies  
-- Evaluated cost structures to support better utilization of resources  
+- Identified high-demand regions to improve resource allocation  
+- Highlighted inefficiencies in delivery and distribution patterns  
+- Evaluated cost structures to support better resource utilization  
 
+---
+
+## Analytics & Reporting
+Analysis was conducted using SQL and Jupyter Notebook to generate insights on:
+
+- **Customer Behavior**: Segmentation, purchase patterns, and retention  
+- **Product Performance**: Sales trends, top categories, and underperformers  
+- **Key Findings**: Summary of major insights  
+- **Recommendations**: Data-driven strategies for improved performance  
+
+---
 
 ## Humanitarian Application
-The data warehouse structure and analytical approach used in this project can be applied in humanitarian and development contexts, such as:
+The data warehouse structure and analytical approach used in this project can be applied in humanitarian and development contexts, including:
 
 - Tracking beneficiaries and aid distribution  
 - Monitoring program performance (M&E)  
 - Improving efficiency in food, health, and education resource allocation  
 
-These concepts are relevant to organizations such as UN agencies and NGOs working in logistics, program delivery, and data-driven decision-making.
+These concepts are relevant to UN agencies and NGOs working in logistics, program delivery, and data-driven decision-making.
 
+---
 
 ## Future Improvements
 - Integration with real-world humanitarian or public datasets  
@@ -62,48 +86,19 @@ These concepts are relevant to organizations such as UN agencies and NGOs workin
 - Automation of ETL processes  
 - Advanced analytics using Python  
 
+---
 
 ## Project Status
-Completed as part of SQL and Data Analytics training, with ongoing improvements and extensions.
+Ongoing project developed as part of SQL and Data Analytics training, with continuous improvements and extensions.
 
+---
 
 ## Author
-Geu Kuei – Data Analyst | M&E | Education & Public Health Data
+**Geu Kuei**  
+Data Analyst | Monitoring & Evaluation (M&E) | Education & Public Health Data  
+ALX Data Engineering Fellow  
 
-## Project Requirements
-### Building the Data Warehouse (Data Engineering)
-#### Objective
-Develop a modern Data Warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+---
 
-• **Data Acquisition**: Import the Global Superstore dataset (CSV from Kaggle).
-
-• **Data Splitting**: Separate the main file into three logical components:
-- Orders
-- Customers
-- Products
-  
-• **Data Cleaning**: Identify and resolve data quality issues (like missing values, duplicates, inconsistent formats).
-
-• **Data Integration**: Combine the three tables into a single, user-friendly data model optimized for analytical queries.
-
-• **Scope Note**: Focus only on the most recent dataset; historization is not required.
-
-• **Documentation**: Provide clear documentation of the data model for both business and technical audiences.
-
-### BI: Analytics & Reporting (Data Analysis)
-#### Objective
-Develop a Jupyter Notebook-based analytics to deliver detailed insights into:
-
-- **Customer Behavior**: Segmentation, purchase patterns, retention, and lifetime value.
-  
-- **Product Analysis**: Sales trends, top-performing categories, seasonality, and underperformers.
-  
-- **Key Findings**: Summary of critical insights from the data.
-  
-- **Recommendations**: Actionable business strategies based on analytical results.
-
-  # License
-  This project is licensed under [MIT License]. You are free to use, modify and share this project provided that you give  proper attributions.
-
-  # About Me
-  My name is Geu Kuei and I am an ALX Data Engineering fellow. I am transitioning from Mathematics field to Data Engineering. 
+## License
+This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
