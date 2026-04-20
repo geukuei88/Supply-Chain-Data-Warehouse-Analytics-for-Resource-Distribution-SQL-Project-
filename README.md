@@ -20,7 +20,7 @@ Efficient resource distribution is critical in both business and humanitarian op
 
 ## Tools & Technologies
 - SQL  
-- Python (optional)  
+- Python   
 - Excel / Power BI  
 - Jupyter Notebook  
 
