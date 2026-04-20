@@ -11,7 +11,7 @@ It performs the following:
  ======================================================================================*/
 
 -- ======================================================
--- SECTION 1: CREATE STAGING SCHEMA (if not exists)
+-- SECTION 1: CREATE STAGING SCHEMA (if it does not exists)
 -- ======================================================
 IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'staging')
 BEGIN
