@@ -177,10 +177,6 @@ PRINT '============================================';
 
 
 
-
-
-
-
 /* ================================================================================
 CLEAN AND LOAD ORDER DATA FROM BRONZE TO SILVER LAYER
 -Performs complex data cleansing including fixing future dates, 
