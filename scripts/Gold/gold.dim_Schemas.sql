@@ -44,3 +44,29 @@ INTO gold.fact_Orders
 FROM silver.Erp_Orders o
 WHERE o.Customer_ID IS NOT NULL
   AND o.Product_ID IS NOT NULL;
+
+VIEWS
+CREATE OR ALTER VIEW gold.vw_sales_analysis AS
+SELECT
+    f.Order_ID,
+    f.Order_Date,
+    f.Ship_Date,
+    f.Ship_Mode,
+
+    c.Customer_Name,
+    c.Region,
+    c.Segment,
+
+    p.Product_Name,
+    p.Category,
+
+    f.Sales,
+    f.Quantity,
+    f.Discount,
+    f.Profit
+
+FROM gold.fact_orders f
+JOIN gold.dim_customers c
+    ON f.Customer_ID = c.Customer_ID
+JOIN gold.dim_products p
+    ON f.Product_ID = p.Product_ID;
