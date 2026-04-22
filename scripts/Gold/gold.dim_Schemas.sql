@@ -70,3 +70,7 @@ JOIN gold.dim_customers c
     ON f.Customer_ID = c.Customer_ID
 JOIN gold.dim_products p
     ON f.Product_ID = p.Product_ID;
+
+CREATE INDEX idx_fact_customer ON gold.fact_orders(Customer_ID);
+CREATE INDEX idx_fact_product ON gold.fact_orders(Product_ID);
+
