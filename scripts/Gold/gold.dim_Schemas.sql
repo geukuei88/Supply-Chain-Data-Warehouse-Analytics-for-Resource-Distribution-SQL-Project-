@@ -23,7 +23,7 @@ INTO gold.dim_Products
 FROM silver.Erp_Products
 WHERE Product_ID IS NOT NULL;
 
-IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
+IF OBJECT_ID('gold.fact_Orders', 'U') IS NOT NULL
     DROP TABLE gold.fact_orders;
 
 SELECT 
@@ -40,7 +40,7 @@ SELECT
     o.Discount,
     o.Profit
 
-INTO gold.fact_orders
+INTO gold.fact_Orders
 FROM silver.Erp_Orders o
 WHERE o.Customer_ID IS NOT NULL
   AND o.Product_ID IS NOT NULL;
