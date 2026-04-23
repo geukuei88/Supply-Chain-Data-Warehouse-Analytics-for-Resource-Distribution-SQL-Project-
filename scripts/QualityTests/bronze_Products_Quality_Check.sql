@@ -1,5 +1,5 @@
 /* ============================================================================
-PRODUCTS TABLE
+PRODUCTS TABLE QUALITY ASSESSMENT
 This script performs data quality checks and validation on the Products table.
 Focus areas include:
 - Key integrity
