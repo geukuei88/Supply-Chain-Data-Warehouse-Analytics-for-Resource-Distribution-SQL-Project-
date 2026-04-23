@@ -1,6 +1,6 @@
-# 🚚 Supply Chain Data Warehouse & Analytics for Resource Distribution (SQL Server Project)
+# Supply Chain Data Warehouse & Analytics for Resource Distribution (SQL Server Project)
 
-## 📌 Project Overview
+## Project Overview
 
 This project demonstrates an end-to-end **Data Warehouse and Analytics solution** built using SQL Server.
 
@@ -10,7 +10,7 @@ The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 - Design and implement a scalable data warehouse using SQL Server  
 - Clean, transform, and structure raw supply chain data  
@@ -22,14 +22,14 @@ The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and
 
 ---
 
-## 🏗️ Data Architecture
+## Data Architecture
 
 
 ---
 
-## 🧱 Data Model (Gold Layer - Star Schema)
+## Data Model (Gold Layer - Star Schema)
 
-### 📊 Fact Table
+### Fact Table
 **fact_orders**
 - Order_ID
 - Order_Date
@@ -44,7 +44,7 @@ The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and
 
 ---
 
-### 👤 Dimension Tables
+### Dimension Tables
 
 **dim_customers**
 - Customer_Key (PK - Surrogate Key)
@@ -61,7 +61,7 @@ The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and
 
 ---
 
-## 🔑 Key Design Features
+## Key Design Features
 
 - Star Schema architecture for analytical efficiency  
 - Surrogate Keys for improved scalability and join performance  
@@ -71,7 +71,7 @@ The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and
 
 ---
 
-## ⚡ Performance Optimization
+## Performance Optimization
 
 Indexes implemented on Fact table:
 
@@ -85,37 +85,37 @@ These indexes improve:
 
 ---
 
-## 📊 KPI Analytical Layer
+## KPI Analytical Layer
 
 The following business questions are answered:
 
-### 📌 Business Performance
+### Business Performance
 - Total Sales, Profit, Quantity, and Orders  
 - Profit Margin analysis  
 
-### 🌍 Geographic Analysis
+### Geographic Analysis
 - Sales by Region  
 - Profit by Region  
 
-### 📦 Product Performance
+### Product Performance
 - Sales by Category  
 - Top 10 Products by Revenue  
 - Product Profitability  
 
-### 👥 Customer Analysis
+### Customer Analysis
 - Sales by Customer Segment  
 - Customer contribution to revenue  
 
-### 💸 Pricing & Efficiency
+### Pricing & Efficiency
 - Discount impact on Profit  
 - Loss-making vs profitable segments  
 
-### 📈 Time-Based Trends
+### Time-Based Trends
 - Monthly Sales and Profit trends  
 
 ---
 
-## 👁️ Reporting Layer (Views)
+## Reporting Layer (Views)
 
 A centralized analytical view was created:
 
@@ -128,9 +128,9 @@ This view:
 
 ---
 
-## 📊 Power BI Dashboard Design (Planned/Recommended)
+## Power BI Dashboard Design (Planned/Recommended)
 
-### 🧭 Page 1: Executive Overview
+### Page 1: Executive Overview
 - Total Sales KPI Card  
 - Total Profit KPI Card  
 - Profit Margin KPI Card  
@@ -139,28 +139,28 @@ This view:
 
 ---
 
-### 🧭 Page 2: Product Performance
+### Page 2: Product Performance
 - Top 10 Products  
 - Sales by Category  
 - Profit by Category  
 
 ---
 
-### 🧭 Page 3: Customer Insights
+### Page 3: Customer Insights
 - Sales by Segment  
 - Regional Distribution  
 - Customer Contribution  
 
 ---
 
-### 🧭 Page 4: Profitability Analysis
+### Page 4: Profitability Analysis
 - Discount vs Profit relationship  
 - Loss-making products  
 - Profit distribution analysis  
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - SQL Server (T-SQL)  
 - Data Warehousing (Star Schema Design)  
@@ -171,7 +171,7 @@ This view:
 
 ---
 
-## 🔄 Data Engineering Process
+## Data Engineering Process
 
 1. **Data Acquisition**
    - Global Superstore dataset (Kaggle)
@@ -200,7 +200,7 @@ This view:
 
 ---
 
-## 🌍 Real-World & Humanitarian Application
+## Real-World & Humanitarian Application
 
 This project simulates real-world **supply chain and humanitarian logistics systems**, making it applicable to:
 
@@ -214,7 +214,7 @@ It demonstrates how structured data systems improve **efficiency, transparency, 
 
 ---
 
-## 🚀 Key Skills Demonstrated
+## Key Skills Demonstrated
 
 - Data Warehouse Design & Architecture  
 - ETL Pipeline Development  
@@ -226,7 +226,7 @@ It demonstrates how structured data systems improve **efficiency, transparency, 
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 - Incremental loading (ETL automation)  
 - Slowly Changing Dimensions (SCD Type 2)  
@@ -236,13 +236,13 @@ It demonstrates how structured data systems improve **efficiency, transparency, 
 
 ---
 
-## 📌 Project Status
+## Project Status
 
 Completed as a structured SQL Data Warehousing and Analytics project with ongoing enhancements for advanced analytics and BI integration.
 
 ---
 
-## 👨‍💻 Author
+## Author
 Geu Kuei
 
 Data Analyst | Data Engineer (Aspiring) | Monitoring & Evaluation (M&E) | Public Health & Education Data  
