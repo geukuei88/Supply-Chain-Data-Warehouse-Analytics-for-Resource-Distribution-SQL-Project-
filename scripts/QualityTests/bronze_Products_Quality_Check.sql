@@ -1,5 +1,5 @@
 /* ============================================================================
-B. PRODUCTS TABLE
+PRODUCTS TABLE
 This script performs data quality checks and validation on the Products table.
 Focus areas include:
 - Key integrity
