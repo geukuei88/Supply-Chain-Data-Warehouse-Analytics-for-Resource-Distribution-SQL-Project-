@@ -1,16 +1,16 @@
-IF OBJECT_ID('gold.dim_Customers', 'U') IS NOT NULL
+IF OBJECT_ID('gold.dim_customers', 'U') IS NOT NULL
     DROP TABLE gold.dim_customers;
 
-SELECT DISTINCT
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY Customer_ID) AS Customer_Key,
     Customer_ID,
     Customer_Name,
     Region,
     Segment
-INTO gold.dim_Customers
-FROM silver.Crm_Customers
-WHERE Customer_ID IS NOT NULL;
+INTO gold.dim_customers
+FROM silver.Crm_Customers;
 
-IF OBJECT_ID('gold.dim_Products', 'U') IS NOT NULL
+IF OBJECT_ID('gold.dim_products', 'U') IS NOT NULL
     DROP TABLE gold.dim_products;
 
 SELECT 
@@ -19,11 +19,10 @@ SELECT
     Product_Name,
     Category,
     Sub_Category
-INTO gold.dim_Products
-FROM silver.Erp_Products
-WHERE Product_ID IS NOT NULL;
+INTO gold.dim_products
+FROM silver.Erp_Products;
 
-IF OBJECT_ID('gold.fact_Orders', 'U') IS NOT NULL
+IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
     DROP TABLE gold.fact_orders;
 
 SELECT 
@@ -32,20 +31,25 @@ SELECT
     o.Ship_Date,
     o.Ship_Mode,
 
-    o.Customer_ID,
-    o.Product_ID,
+    dc.Customer_Key,
+    dp.Product_Key,
 
     o.Sales,
     o.Quantity,
     o.Discount,
     o.Profit
 
-INTO gold.fact_Orders
+INTO gold.fact_orders
 FROM silver.Erp_Orders o
-WHERE o.Customer_ID IS NOT NULL
-  AND o.Product_ID IS NOT NULL;
-                                        
-VIEWS
+
+LEFT JOIN gold.dim_customers dc
+    ON o.Customer_ID = dc.Customer_ID
+
+LEFT JOIN gold.dim_products dp
+    ON o.Product_ID = dp.Product_ID;
+
+GO
+
 CREATE OR ALTER VIEW gold.vw_sales_analysis AS
 SELECT
     f.Order_ID,
@@ -67,35 +71,35 @@ SELECT
 
 FROM gold.fact_orders f
 JOIN gold.dim_customers c
-    ON f.Customer_ID = c.Customer_ID
+    ON f.Customer_Key = c.Customer_Key
 JOIN gold.dim_products p
-    ON f.Product_ID = p.Product_ID;
+    ON f.Product_Key = p.Product_Key;
 
--- =====================================
--- CUSTOMER INDEX
--- =====================================
-IF EXISTS (
-    SELECT 1 
-    FROM sys.indexes 
-    WHERE name = 'idx_fact_customer'
-      AND object_id = OBJECT_ID('gold.fact_orders')
-)
-DROP INDEX idx_fact_customer ON gold.fact_orders;
-
-CREATE INDEX idx_fact_customer 
-ON gold.fact_orders(Customer_ID);
-
-
--- =====================================
--- PRODUCT INDEX
+    -- =====================================
+-- INDEX: Customer_Key
 -- =====================================
 IF EXISTS (
     SELECT 1 
     FROM sys.indexes 
-    WHERE name = 'idx_fact_product'
+    WHERE name = 'idx_fact_customer_key'
       AND object_id = OBJECT_ID('gold.fact_orders')
 )
-DROP INDEX idx_fact_product ON gold.fact_orders;
+DROP INDEX idx_fact_customer_key ON gold.fact_orders;
 
-CREATE INDEX idx_fact_product 
-ON gold.fact_orders(Product_ID);
+CREATE INDEX idx_fact_customer_key 
+ON gold.fact_orders(Customer_Key);
+
+
+-- =====================================
+-- INDEX: Product_Key
+-- =====================================
+IF EXISTS (
+    SELECT 1 
+    FROM sys.indexes 
+    WHERE name = 'idx_fact_product_key'
+      AND object_id = OBJECT_ID('gold.fact_orders')
+)
+DROP INDEX idx_fact_product_key ON gold.fact_orders;
+
+CREATE INDEX idx_fact_product_key 
+ON gold.fact_orders(Product_Key);
