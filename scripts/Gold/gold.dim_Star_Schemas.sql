@@ -71,6 +71,31 @@ JOIN gold.dim_customers c
 JOIN gold.dim_products p
     ON f.Product_ID = p.Product_ID;
 
-CREATE INDEX idx_fact_customer ON gold.fact_orders(Customer_ID);
-CREATE INDEX idx_fact_product ON gold.fact_orders(Product_ID);
+-- =====================================
+-- CUSTOMER INDEX
+-- =====================================
+IF EXISTS (
+    SELECT 1 
+    FROM sys.indexes 
+    WHERE name = 'idx_fact_customer'
+      AND object_id = OBJECT_ID('gold.fact_orders')
+)
+DROP INDEX idx_fact_customer ON gold.fact_orders;
 
+CREATE INDEX idx_fact_customer 
+ON gold.fact_orders(Customer_ID);
+
+
+-- =====================================
+-- PRODUCT INDEX
+-- =====================================
+IF EXISTS (
+    SELECT 1 
+    FROM sys.indexes 
+    WHERE name = 'idx_fact_product'
+      AND object_id = OBJECT_ID('gold.fact_orders')
+)
+DROP INDEX idx_fact_product ON gold.fact_orders;
+
+CREATE INDEX idx_fact_product 
+ON gold.fact_orders(Product_ID);
