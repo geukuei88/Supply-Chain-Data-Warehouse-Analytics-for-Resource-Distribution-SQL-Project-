@@ -162,7 +162,8 @@ This view:
 
 ## Tools & Technologies
 
-- SQL Server (T-SQL)  
+- SQL Server (T-SQL)
+- Python 
 - Data Warehousing (Star Schema Design)  
 - Surrogate Key Modeling  
 - SQL Indexing & Optimization  
