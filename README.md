@@ -34,6 +34,7 @@ It reflects real industry practices used in:
 ---
 
 ## Data Architecture
+https://github.com/geukuei88/Supply-Chain-Data-Warehouse-Analytics-for-Resource-Distribution-SQL-Project-/blob/main/Docs/Data%20Warehouse%20Layers.png
 
 ![Data Architecture](docs/architecture.png)  <!-- ADD YOUR ARCHITECTURE DIAGRAM HERE -->
 
