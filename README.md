@@ -35,7 +35,7 @@ It reflects real industry practices used in:
 
 ## Data Architecture
 
-![Data Architecture](docs/architecture.png)  <!-- 🔴 ADD YOUR ARCHITECTURE DIAGRAM HERE -->
+![Data Architecture](docs/architecture.png)  <!-- ADD YOUR ARCHITECTURE DIAGRAM HERE -->
 
 ### Data Flow
 Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
@@ -52,13 +52,13 @@ Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 - **Gold Layer**  
   Business-ready data modeled using a Star Schema (Fact & Dimension tables) optimized for analytics and reporting.
 
-> ℹ️ Note: While the Silver layer can be queried for validation and intermediate analysis, the **Gold layer serves as the single source of truth for reporting and analytics**.
+> Note: While the Silver layer can be queried for validation and intermediate analysis, the **Gold layer serves as the single source of truth for reporting and analytics**.
 
 ---
 
 ## Data Model (Gold Layer - Star Schema)
 
-![Star Schema](docs/data_model.png)  <!-- 🔴 ADD YOUR STAR SCHEMA DIAGRAM HERE -->
+![Star Schema](docs/data_model.png)  <!-- ADD YOUR STAR SCHEMA DIAGRAM HERE -->
 
 ### Fact Table
 
@@ -96,7 +96,7 @@ Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
 ## Data Dictionary (Summary)
 
-> 📄 Full data dictionary available in `/docs/data_dictionary.md`
+> Full data dictionary available in `/docs/data_dictionary.md`
 
 ### fact_orders
 - Sales → Revenue per transaction  
