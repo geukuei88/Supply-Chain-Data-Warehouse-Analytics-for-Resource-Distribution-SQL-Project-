@@ -1,3 +1,15 @@
+/* ============================================================
+   GOLD LAYER: DIMENSION TABLE - CUSTOMERS
+   ------------------------------------------------------------
+   Purpose:
+   - Create a customer dimension table for analytics
+   - Generate surrogate key (Customer_Key)
+   - Capture descriptive customer attributes
+
+   Source:
+   - silver.Crm_Customers
+   ============================================================ */
+
 IF OBJECT_ID('gold.dim_customers', 'U') IS NOT NULL
     DROP TABLE gold.dim_customers;
 
@@ -10,6 +22,20 @@ SELECT
 INTO gold.dim_customers
 FROM silver.Crm_Customers;
 
+
+
+/* ============================================================
+   GOLD LAYER: DIMENSION TABLE - PRODUCTS
+   ------------------------------------------------------------
+   Purpose:
+   - Create a product dimension table for analytics
+   - Generate surrogate key (Product_Key)
+   - Store product classification attributes
+
+   Source:
+   - silver.Erp_Products
+   ============================================================ */
+
 IF OBJECT_ID('gold.dim_products', 'U') IS NOT NULL
     DROP TABLE gold.dim_products;
 
@@ -21,6 +47,24 @@ SELECT
     Sub_Category
 INTO gold.dim_products
 FROM silver.Erp_Products;
+
+
+
+/* ============================================================
+   GOLD LAYER: FACT TABLE - ORDERS
+   ------------------------------------------------------------
+   Purpose:
+   - Create central fact table for sales transactions
+   - Link to dimension tables using surrogate keys
+   - Store measurable business metrics
+
+   Source:
+   - silver.Erp_Orders
+
+   Joins:
+   - Customer_ID → dim_customers
+   - Product_ID  → dim_products
+   ============================================================ */
 
 IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
     DROP TABLE gold.fact_orders;
@@ -50,6 +94,20 @@ LEFT JOIN gold.dim_products dp
 
 GO
 
+
+
+/* ============================================================
+   GOLD LAYER: ANALYTICAL VIEW - SALES ANALYSIS
+   ------------------------------------------------------------
+   Purpose:
+   - Provide a business-friendly dataset
+   - Combine fact and dimension tables
+   - Enable reporting and dashboarding
+
+   Output:
+   - Flattened dataset for analysis (star schema view)
+   ============================================================ */
+
 CREATE OR ALTER VIEW gold.vw_sales_analysis AS
 SELECT
     f.Order_ID,
@@ -75,7 +133,17 @@ JOIN gold.dim_customers c
 JOIN gold.dim_products p
     ON f.Product_Key = p.Product_Key;
 
-    -- =====================================
+
+
+/* ============================================================
+   PERFORMANCE OPTIMIZATION: INDEXING
+   ------------------------------------------------------------
+   Purpose:
+   - Improve query performance on fact table joins
+   - Optimize filtering and aggregation operations
+   ============================================================ */
+
+-- =====================================
 -- INDEX: Customer_Key
 -- =====================================
 IF EXISTS (
