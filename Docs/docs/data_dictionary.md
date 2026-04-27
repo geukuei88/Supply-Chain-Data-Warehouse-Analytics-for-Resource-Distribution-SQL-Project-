@@ -15,7 +15,7 @@ The system follows a **Medallion Architecture**:
 
 # GOLD LAYER (Analytics Layer)
 
-## 🧾 fact_orders
+## fact_orders
 
 **Description:**  
 Central fact table capturing transactional sales data.
