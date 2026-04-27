@@ -96,7 +96,7 @@ Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
 ## Data Dictionary (Summary)
 
-> Full data dictionary available in `/docs/Data_Dictionary.md`
+> Full data dictionary available in `/docs/Data Dictionary.md`
 
 ### fact_orders
 - Sales → Revenue per transaction  
