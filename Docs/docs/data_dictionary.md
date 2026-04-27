@@ -1,4 +1,4 @@
-# 📘 Data Dictionary
+# Data Dictionary
 
 ## Overview
 
@@ -9,11 +9,11 @@ The system follows a **Medallion Architecture**:
 - Silver → Cleaned data
 - Gold → Analytics-ready data
 
-> ℹ️ Note: While the Silver layer can be queried for validation and intermediate analysis, the Gold layer is the **primary source for business analytics and reporting**.
+> Note: While the Silver layer can be queried for validation and intermediate analysis, the Gold layer is the **primary source for business analytics and reporting**.
 
 ---
 
-# 🟦 GOLD LAYER (Analytics Layer)
+# GOLD LAYER (Analytics Layer)
 
 ## 🧾 fact_orders
 
@@ -38,7 +38,7 @@ One row per order line (each product within an order)
 
 ---
 
-## 🧑‍💼 dim_customers
+## dim_customers
 
 **Description:**  
 Stores customer-related attributes for segmentation and regional analysis.
@@ -53,7 +53,7 @@ Stores customer-related attributes for segmentation and regional analysis.
 
 ---
 
-## 📦 dim_products
+## dim_products
 
 **Description:**  
 Stores product attributes for categorization and performance analysis.
@@ -68,7 +68,7 @@ Stores product attributes for categorization and performance analysis.
 
 ---
 
-## 📊 vw_sales_analysis
+## vw_sales_analysis
 
 **Description:**  
 A denormalized analytical view combining fact and dimension tables.
@@ -80,9 +80,9 @@ A denormalized analytical view combining fact and dimension tables.
 
 ---
 
-# 🟨 SILVER LAYER (Cleaned Data Layer)
+# SILVER LAYER (Cleaned Data Layer)
 
-## 🧾 Erp_Orders
+## Erp_Orders
 
 | Column Name  | Data Type       |
 |-------------|----------------|
@@ -99,7 +99,7 @@ A denormalized analytical view combining fact and dimension tables.
 
 ---
 
-## 🧑‍💼 Crm_Customers
+## Crm_Customers
 
 | Column Name    | Data Type      |
 |---------------|---------------|
@@ -114,7 +114,7 @@ A denormalized analytical view combining fact and dimension tables.
 
 ---
 
-## 📦 Erp_Products
+## Erp_Products
 
 | Column Name   | Data Type       |
 |--------------|----------------|
@@ -125,7 +125,7 @@ A denormalized analytical view combining fact and dimension tables.
 
 ---
 
-# 📌 Business Rules & Assumptions
+# Business Rules & Assumptions
 
 - **Sales** = Quantity × Price *(Price not explicitly stored)*  
 - **Profit** may be positive or negative (indicating gain or loss)  
@@ -137,13 +137,13 @@ A denormalized analytical view combining fact and dimension tables.
 
 ---
 
-# 🔗 Data Relationships
+# Data Relationships
 
 - fact_orders.Customer_Key → dim_customers.Customer_Key  
 - fact_orders.Product_Key → dim_products.Product_Key  
 
 ---
 
-# 🎯 Summary
+# Summary
 
 The Gold layer serves as the **single source of truth for analytics**, while the Silver layer provides **clean, validated data for transformation and intermediate analysis**.
