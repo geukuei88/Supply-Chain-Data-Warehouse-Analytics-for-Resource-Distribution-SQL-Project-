@@ -42,7 +42,7 @@ It reflects real industry practices used in:
 
 Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
-[View Data Warehouse Design](Docs/data_warehouse_design.drawio.png)
+Full Data Warehouse Design available on [View Data Warehouse Design](Docs/data_warehouse_design.drawio.png)
 
 
 ### Layer Description
@@ -102,8 +102,6 @@ Full Star Schema Available on `[View Star Schema](Docs/star_schema.drawio.png)
 ## Data Dictionary (Summary)
 
 > Full data dictionary available in `[View Data Dictionary](Docs/data_dictionary.md)
-
-> /docs/Data Dictionary.md`
 
 ### fact_orders
 - Sales → Revenue per transaction  
