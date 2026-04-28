@@ -160,7 +160,7 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 | **1a. Monthly/yearly sales trends** | SQL Aggregation | `gold.vw_sales_analysis` + Power BI line chart |  Planned |
 | **1b. Regions with highest revenue** | SQL GROUP BY | `gold.vw_sales_analysis` + Power BI map |  Planned |
 | **1c. Top 10 best-selling products** | SQL ORDER BY + LIMIT | `gold.vw_sales_analysis` + Power BI table |  Planned |
-| **1d. Product categories contributing most to profit** | SQL SUM(profit) GROUP BY | `gold.vw_sales_analysis` + Power BI bar chart | 📋 Planned |
+| **1d. Product categories contributing most to profit** | SQL SUM(profit) GROUP BY | `gold.vw_sales_analysis` + Power BI bar chart |  Planned |
 | **1e. Average order value by segment** | SQL AVG(sales) GROUP BY | Calculated metric in `gold.vw_sales_analysis` |  Planned |
 | **2a. Most profitable sub-categories** | SQL SUM(profit) GROUP BY | Power BI "Product Profitability" page |  Planned |
 | **2c. Products with highest discount rates** | SQL ORDER BY discount DESC | `gold.vw_sales_analysis` + filter |  Planned |
@@ -169,7 +169,7 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 | **3e. Ship mode most used by each segment** | SQL COUNT + GROUP BY | `gold.vw_sales_analysis` crosstab |  Planned |
 | **4a. Cities with most profit** | SQL SUM(profit) GROUP BY city | `gold.vw_sales_analysis` + city aggregation |  Planned |
 | **4b. Sales distribution across states** | SQL SUM(sales) GROUP BY state | Power BI "Regional Distribution" map |  Planned |
-| **5b. Months with highest/lowest sales** | SQL EXTRACT(MONTH) + aggregation | `gold.vw_sales_analysis` + monthly view | 📋 Planned |
+| **5b. Months with highest/lowest sales** | SQL EXTRACT(MONTH) + aggregation | `gold.vw_sales_analysis` + monthly view |  Planned |
 | **5c. Discounts by time of year** | SQL EXTRACT(MONTH) + AVG(discount) | Power BI "Discount vs Time" scatter |  Planned |
 | **Discount impact on profit** | SQL correlation query | Power BI "Discount vs Profit" scatter |  Planned |
 | **Loss-making vs profitable segments** | SQL CASE WHEN profit < 0 THEN 'Loss' ELSE 'Profit' END | Power BI "Profitability Analysis" |  Planned |
@@ -273,7 +273,7 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 
 ---
 
-**Note on Two-Project Harmony:**  
+### Note on Two-Project Harmony:  
 - Project 1 delivered the data warehouse foundation. 
 - Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI)
  and adds predictive value (via ML models). 
@@ -355,13 +355,3 @@ ALX Data Engineering Fellow
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
 
-
-
-
-
-
-
-
-
-
-### Part G: Explicit Cross-Project Mapping Summary
