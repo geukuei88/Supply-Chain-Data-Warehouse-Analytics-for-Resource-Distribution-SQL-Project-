@@ -306,7 +306,8 @@ The referenced **Project 2** is in **planning phase**.All items below are define
   It will consume the data warehouse to:
   - Answer business KPIs using SQL and Power BI (descriptive analytics)
   - Extend insights using machine learning models (predictive analytics).
-  -Together, these projects form a complete data pipeline:  
+    
+  Together, these projects form a complete data pipeline:  
 **Raw Data → Data Warehouse → Analytics → Predictions**
 
 ## Tools & Technologies
