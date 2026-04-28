@@ -302,6 +302,8 @@ The referenced **Project 2** is in **planning phase**.All items below are define
   It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
 
 ---
+
+- **Simple Query Example (Screenshot)**
 ![Top Performers Example](Docs/top_performers.png)
 
 
