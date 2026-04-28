@@ -298,7 +298,7 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 ### Project Integration: Current State vs Roadmap
 
 - **Project 1 (Data Warehouse)**  
-  Fully implemented and serves as the foundation of this project.  
+  Fully implemented and serves as the foundation of project 2.  
   It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
 
 - **Project 2 (Analytics & Machine Learning)**  
