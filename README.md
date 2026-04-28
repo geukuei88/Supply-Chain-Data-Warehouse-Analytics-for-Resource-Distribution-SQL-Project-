@@ -266,6 +266,40 @@ Profit prediction, optimal discount → Notebooks 03, 06
 Churn prediction → Notebook 07
 
 
+---
+
+### Part H: Validation Checklist for Evaluators (Upon Completion)
+
+**SQL / Power BI Layer (Descriptive)**
+- [ ] Every SQL-based KPI (1a,1b,1c,1d,1e,2a,2c,2d,2e,3e,4a,4b,5b,5c) has a corresponding view or dashboard
+- [ ] `gold.vw_sales_analysis` contains all necessary columns (sales, profit, discount, product, region, segment, date)
+- [ ] Power BI dashboards are mapped to specific KPI questions
+
+**Machine Learning Layer (Predictive)**
+- [ ] Each ML task has a dedicated Jupyter notebook
+- [ ] ML notebooks consume SQL views as input data
+- [ ] Models answer questions that SQL alone cannot (forecasting, recommendations, clustering, churn)
+- [ ] Optimal discount analysis is performed (Notebook 06)
+- [ ] Bought-together products are identified (Notebook 04)
+
+---
+
+### Part I: Status Legend
+
+| Icon | Meaning |
+|------|---------|
+| 📋 Planned | Scope defined, ready to implement |
+| 🔜 To Be Created | Artifact not yet built |
+| ✅ Complete | Implemented and validated |
+| 🔄 In Progress | Currently being worked on |
+
+**Current Overall Status:** Project 2 is in **Planning Phase** - 0% complete, 100% scoped.
+
+---
+
+**Document Version:** 1.0  
+**Last Updated:** [Your Date]  
+**Maintainer:** [Your Name]
 
 
 
