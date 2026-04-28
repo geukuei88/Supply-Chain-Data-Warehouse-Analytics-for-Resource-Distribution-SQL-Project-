@@ -34,6 +34,7 @@ It reflects real industry practices used in:
 ---
 
 ## Data Architecture
+![Data Warehouse Layers](Docs/data_warehouse_layers.png)
 
 ![Data Architecture](docs/architecture.png)  <!-- ADD YOUR ARCHITECTURE DIAGRAM HERE -->
 
