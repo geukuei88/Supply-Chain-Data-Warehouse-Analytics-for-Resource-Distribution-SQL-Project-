@@ -240,10 +240,10 @@ Discount optimization → ML Profit Prediction (Notebook 03)
 ---
 
 **Note on Two-Project Harmony:**  
-Project 1 delivered the data warehouse foundation. 
-Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI) and 
-adds predictive value (via ML models). 
-This README serves as the **single source of truth** connecting both projects.
+- Project 1 delivered the data warehouse foundation. 
+- Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI)
+ and adds predictive value (via ML models). 
+- This README serves as the **single source of truth** connecting both projects.
 
 
 
