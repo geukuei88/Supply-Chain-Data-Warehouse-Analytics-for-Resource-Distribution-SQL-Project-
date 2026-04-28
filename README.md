@@ -318,3 +318,109 @@ ALX Data Engineering Fellow
 
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+
+
+
+
+
+
+
+
+## KPI Analytical Layer: Cross-Project Harmony
+
+This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Business questions are explicitly answered using either **SQL/BI (Descriptive)** or **Machine Learning (Predictive)** methods.
+
+---
+
+### Part A: SQL / Power BI Layer (Descriptive Analytics)
+
+*These questions are answered directly from the data warehouse using SQL queries and Power BI dashboards.*
+
+| Project 1 KPI Question | Answer Method | Project 2 Artifact | Status |
+|------------------------|---------------|---------------------|--------|
+| **1a. Monthly/yearly sales trends** | SQL Aggregation | `gold.vw_sales_analysis` + Power BI line chart | ✅ Complete |
+| **1b. Regions with highest revenue** | SQL GROUP BY | `gold.vw_sales_analysis` + Power BI map | ✅ Complete |
+| **1c. Top 10 best-selling products** | SQL ORDER BY + LIMIT | `gold.vw_sales_analysis` + Power BI table | ✅ Complete |
+| **1d. Product categories contributing most to profit** | SQL SUM(profit) GROUP BY | `gold.vw_sales_analysis` + Power BI bar chart | ✅ Complete |
+| **1e. Average order value by segment** | SQL AVG(sales) GROUP BY | Calculated metric in `gold.vw_sales_analysis` | ✅ Complete |
+| **2a. Most profitable sub-categories** | SQL SUM(profit) GROUP BY | Power BI "Product Profitability" page | ✅ Complete |
+| **2c. Products with highest discount rates** | SQL ORDER BY discount DESC | `gold.vw_sales_analysis` + filter | ✅ Complete |
+| **2d. Profit margin by category** | SQL calculated column | `gold.vw_sales_analysis` | ✅ Complete |
+| **2e. Loss leaders (negative profit)** | SQL WHERE profit < 0 | Power BI "Loss-making Products" filter | ✅ Complete |
+| **3e. Ship mode most used by each segment** | SQL COUNT + GROUP BY | `gold.vw_sales_analysis` crosstab | ✅ Complete |
+| **4a. Cities with most profit** | SQL SUM(profit) GROUP BY city | `gold.vw_sales_analysis` + city aggregation | ✅ Complete |
+| **4b. Sales distribution across states** | SQL SUM(sales) GROUP BY state | Power BI "Regional Distribution" map | ✅ Complete |
+| **5b. Months with highest/lowest sales** | SQL EXTRACT(MONTH) + aggregation | `gold.vw_sales_analysis` + monthly view | ✅ Complete |
+| **5c. Discounts by time of year** | SQL EXTRACT(MONTH) + AVG(discount) | Power BI "Discount vs Time" scatter | ✅ Complete |
+| **Discount impact on profit** | SQL correlation query | Power BI "Discount vs Profit" scatter | ✅ Complete |
+| **Loss-making vs profitable segments** | SQL CASE WHEN profit < 0 THEN 'Loss' ELSE 'Profit' END | Power BI "Profitability Analysis" | ✅ Complete |
+| **Customer contribution to revenue** | SQL SUM(sales) GROUP BY customer + percent of total | Power BI Pareto chart | ✅ Complete |
+
+---
+
+### Part B: Machine Learning Layer (Predictive Analytics)
+
+*These questions require ML models to predict, forecast, or recommend.*
+
+| Project 1 KPI Question | ML Task | Target Variable | Project 2 Artifact | Status |
+|------------------------|---------|-----------------|---------------------|--------|
+| **2b. Products frequently bought together** | Association Rule Mining / Market Basket Analysis | Product pairs | `04_recommendation_system.ipynb` | 🔄 Planned |
+| **3a. Average shipping time by ship mode** | Regression / Classification | Shipping days | `05_shipping_classification.ipynb` | 🔄 Planned |
+| **5a. Seasonal sales patterns** | Time Series Decomposition + Forecasting | Sales (next month/quarter) | `01_sales_forecasting.ipynb` | 🔄 In Progress |
+| **What will be sales for next quarter?** | Time Series Forecasting | Future Sales | `01_sales_forecasting.ipynb` | 🔄 In Progress |
+| **Which products will be top sellers next month?** | Time Series + Ranking | Product Sales Forecast | `01_sales_forecasting.ipynb` | 🔄 In Progress |
+| **Can we segment customers into distinct groups?** | Clustering (K-Means, DBSCAN) | Customer Segment Labels | `02_customer_segmentation.ipynb` | 🔄 In Progress |
+| **What are characteristics of high-value customers?** | Clustering + Profile Analysis | Customer Cluster Profiles | `02_customer_segmentation.ipynb` | 🔄 In Progress |
+| **Can we predict if an order will be profitable?** | Classification (Binary) | Profit > 0 (Yes/No) | `03_profit_prediction.ipynb` | 🔄 Planned |
+| **What factors most influence profit?** | Feature Importance (Random Forest / SHAP) | Profit Drivers | `03_profit_prediction.ipynb` | 🔄 Planned |
+| **What is optimal discount for maximum profit?** | Optimization / Regression | Discount % | `06_discount_optimization.ipynb` | 🔄 Planned |
+| **Can we predict profit margin by category?** | Regression | Profit Margin % | `03_profit_prediction.ipynb` | 🔄 Planned |
+| **What products should we recommend to a customer?** | Collaborative Filtering / Association Rules | Product Recommendations | `04_recommendation_system.ipynb` | 🔄 Planned |
+| **Can we predict which shipping mode a customer will choose?** | Multi-Class Classification | Ship Mode (Standard, Express, etc.) | `05_shipping_classification.ipynb` | 🔄 Planned |
+| **What factors influence shipping mode selection?** | Feature Importance | Key Drivers | `05_shipping_classification.ipynb` | 🔄 Planned |
+| **Which customers are at risk of not ordering again?** | Binary Classification | Will Order Again? (Yes/No) | `07_churn_prediction.ipynb` | 🔄 Planned |
+| **What factors indicate a customer might churn?** | Feature Importance + Survival Analysis | Churn Signals | `07_churn_prediction.ipynb` | 🔄 Planned |
+| **Can we identify churn signals early?** | Early Warning System | Days to Churn | `07_churn_prediction.ipynb` | 🔄 Planned |
+
+---
+
+### Part C: SQL Views Reference
+
+| View Name | Description | Answers These KPIs |
+|-----------|-------------|---------------------|
+| `gold.vw_sales_analysis` | Primary BI dataset with sales, profit, discount, product, region, segment, date | 1a, 1b, 1c, 1d, 1e, 2c, 2d, 2e, 3e, 4a, 4b, 5b, 5c |
+| `gold.vw_monthly_trends` | Monthly aggregated sales and profit | 1a, 5a, 5b |
+| `gold.vw_customer_metrics` | Customer lifetime value, order count, churn risk flags | Customer contribution, churn features |
+| `gold.vw_product_performance` | Product-level profit, discount, loss leader flags | 1c, 2a, 2c, 2d, 2e |
+
+---
+
+### Part D: Power BI Dashboard Mapping
+
+| Dashboard Page | SQL View Used | Answers These KPIs (SQL Layer) | ML Models Referenced |
+|----------------|---------------|-------------------------------|----------------------|
+| **Executive Overview** | `vw_sales_analysis`, `vw_monthly_trends` | 1a, 1b, 1e, 5b | Forecasting (Notebook 01) |
+| **Product Performance** | `vw_sales_analysis`, `vw_product_performance` | 1c, 1d, 2a, 2c, 2d, 2e | Recommendation (Notebook 04) |
+| **Customer Insights** | `vw_sales_analysis`, `vw_customer_metrics` | 1e, 3e, customer contribution | Segmentation (02), Churn (07) |
+| **Profitability Analysis** | `vw_sales_analysis` | Discount impact, loss leaders | Profit Prediction (03), Discount Optimization (06) |
+| **Geographic Analysis** | `vw_sales_analysis` | 1b, 4a, 4b | None (pure SQL) |
+| **Shipping Insights** | `vw_sales_analysis` | 3e | Shipping Classification (05) |
+
+---
+
+### Part E: Jupyter Notebooks (ML Layer)
+
+| Notebook | ML Task | Answers These KPIs (ML Layer) | SQL Input View |
+|----------|---------|-------------------------------|----------------|
+| `01_sales_forecasting.ipynb` | Time Series (ARIMA, Prophet, LSTM) | 5a, future sales, top sellers next month | `vw_monthly_trends` |
+| `02_customer_segmentation.ipynb` | Clustering (K-Means, PCA) | Customer segments, high-value profiles | `vw_customer_metrics` |
+| `03_profit_prediction.ipynb` | Regression + Classification | Profit prediction, feature importance, optimal discount | `vw_sales_analysis` |
+| `04_recommendation_system.ipynb` | Association Rules (Apriori) / Collaborative Filtering | 2b, product recommendations | `vw_sales_analysis` |
+| `05_shipping_classification.ipynb` | Multi-Class Classification | 3a, shipping mode prediction | `vw_sales_analysis` |
+| `06_discount_optimization.ipynb` | Optimization (Grid Search / Bayesian) | Optimal discount, profit maximization | `vw_sales_analysis` |
+| `07_churn_prediction.ipynb` | Binary Classification (XGBoost, Logistic) | Churn risk, early warning signals | `vw_customer_metrics` |
+
+---
+
+### Part F: Explicit Cross-Project Mapping Summary
+
