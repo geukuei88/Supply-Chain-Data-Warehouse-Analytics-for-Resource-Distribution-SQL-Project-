@@ -42,7 +42,7 @@ It reflects real industry practices used in:
 
 Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
-[View Data Warehouse Design](Docs/data_warehuse_design.drawio.png)
+[View Data Warehouse Design](Docs/data_warehouse_design.drawio.png)
 
 
 ### Layer Description
