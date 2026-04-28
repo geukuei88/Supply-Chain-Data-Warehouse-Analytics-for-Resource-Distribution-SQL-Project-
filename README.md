@@ -303,7 +303,7 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 
 ---
 
-- ### Simple Query Example (Screenshot)
+### Screenhot of a Simple Query on **gold.vw_sales_analysis** Table
   
 ![Top Performers Example](Docs/top_performers.png)
 
