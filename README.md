@@ -215,16 +215,16 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 ---
 
 ### Part D: Explicit Cross-Project Mapping Summary
-1a (sales trends) → Power BI + gold.vw_sales_analysis
-1b (top regions) → Power BI map + SQL aggregation
-1c (top products) → Power BI table + SQL ORDER BY
-1d (profit category) → Power BI bar chart
-2a (sub-categories) → Power BI drill-down
-2b (bought together) → ML Recommendation System (Notebook 04)
-2e (loss leaders) → Power BI filter (profit < 0)
-3a (shipping time) → ML Shipping Classification (Notebook 05)
-5a (seasonality) → ML Sales Forecasting (Notebook 01)
-Discount optimization → ML Profit Prediction (Notebook 03)
+- 1a (sales trends) → Power BI + gold.vw_sales_analysis
+- 1b (top regions) → Power BI map + SQL aggregation
+- 1c (top products) → Power BI table + SQL ORDER BY
+- 1d (profit category) → Power BI bar chart
+- 2a (sub-categories) → Power BI drill-down
+- 2b (bought together) → ML Recommendation System (Notebook 04)
+- 2e (loss leaders) → Power BI filter (profit < 0)
+- 3a (shipping time) → ML Shipping Classification (Notebook 05)
+- 5a (seasonality) → ML Sales Forecasting (Notebook 01)
+- Discount optimization → ML Profit Prediction (Notebook 03)
 
 
 ---
@@ -244,6 +244,10 @@ Discount optimization → ML Profit Prediction (Notebook 03)
 - Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI)
  and adds predictive value (via ML models). 
 - This README serves as the **single source of truth** connecting both projects.
+
+
+
+
 
 
 
