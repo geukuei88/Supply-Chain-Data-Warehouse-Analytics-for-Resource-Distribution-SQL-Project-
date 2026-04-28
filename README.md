@@ -63,7 +63,7 @@ Full Data Warehouse Design available on [View Data Warehouse Design](Docs/data_w
 
 ## Data Model (Gold Layer - Star Schema)
 
-Full Star Schema Available on `[View Star Schema](Docs/star_schema.drawio.png) 
+Full Star Schema available on `[View Star Schema](Docs/star_schema.drawio.png) 
 
 ### Fact Table
 
