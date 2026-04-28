@@ -1,5 +1,5 @@
 /* ====================================================================
-BATCH 5: CLEAN AND LOAD PRODUCT DATA FROM BRONZE TO SILVER
+CLEAN AND LOAD PRODUCT DATA FROM BRONZE TO SILVER
 -Standardizes category and sub-category values to proper case.
 -Trims whitespace from all text fields while preserving original product
 name formatting
