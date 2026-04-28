@@ -161,10 +161,6 @@ These indexes improve:
 
 This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Business questions are explicitly answered using either **SQL/BI (Descriptive)** or **Machine Learning (Predictive)** methods.
 
---
-
-
-
 The referenced **Project 2** is in **planning phase**.All items below are defined, with implementation prioritized in phases..
 
 ---
@@ -302,8 +298,19 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 ### Project Integration: Current State vs Roadmap
 
 - **Project 1 (Data Warehouse)**  
-  Fully implemented and serves as the foundation for project 2.  
+  Fully implemented, operational and serves as the foundation for project 2.  
   It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
+
+
+
+
+
+
+
+
+
+
+
 
 - **Project 2 (Analytics & Machine Learning)**  
   Currently in the planning phase.  
