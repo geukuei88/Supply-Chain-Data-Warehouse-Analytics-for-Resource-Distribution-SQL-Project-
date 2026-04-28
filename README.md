@@ -147,7 +147,7 @@ These indexes improve:
 
 This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Business questions are explicitly answered using either **SQL/BI (Descriptive)** or **Machine Learning (Predictive)** methods.
 
-**Current Status:** Project 2 is in **planning phase**. All items below are scoped and ready for implementation.
+This referred **Project 2** is in **planning phase**. All items below are scoped and ready for implementation.
 
 ---
 
@@ -340,9 +340,9 @@ This project simulates real-world **supply chain and humanitarian logistics syst
 
 ## Project Status
 
-- Project 1 is completed as a structured SQL Data Warehousing with ongoing enhancements for advanced
+- **Project 1** is **completed** as a structured SQL Data Warehousing with ongoing enhancements for advanced
   analytics and BI integration.
-- Project 2 is in **Planning Phase** - 0% complete, 100% scoped.
+- **Project 2** is in **Planning Phase** - 0% complete, 100% scoped.
 
 ---
 
