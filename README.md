@@ -252,23 +252,10 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 | **Phase 4 (Week 7-8)** | Recommendations + Shipping | Notebooks 04, 05 | 2b, 3a, shipping prediction |
 | **Phase 5 (Week 9-10)** | Churn Prediction + Final Integration | Notebook 07, complete dashboards | Churn risk, early warning signals |
 
----### Part G: 
-Project 1 Question → Project 2 Artifact (SQL vs ML)
-
-DESCRIPTIVE (SQL + Power BI) - Phase 1:
-1a, 1b, 1c, 1d, 1e, 2a, 2c, 2d, 2e, 3e, 4a, 4b, 5b, 5c
-→ gold.vw_sales_analysis + Power BI dashboards
-
-PREDICTIVE (Machine Learning) - Phases 2-5:
-2b, 3a, 5a → Notebooks 01, 04, 05
-Customer segmentation → Notebook 02
-Profit prediction, optimal discount → Notebooks 03, 06
-Churn prediction → Notebook 07
-
 
 ---
 
-### Part H: Validation Checklist for Evaluators (Upon Completion)
+### Part G: Validation Checklist for Evaluators (Upon Completion)
 
 **SQL / Power BI Layer (Descriptive)**
 - [ ] Every SQL-based KPI (1a,1b,1c,1d,1e,2a,2c,2d,2e,3e,4a,4b,5b,5c) has a corresponding view or dashboard
@@ -286,20 +273,9 @@ Churn prediction → Notebook 07
 
 ### Part I: Status Legend
 
-| Icon | Meaning |
-|------|---------|
-| 📋 Planned | Scope defined, ready to implement |
-| 🔜 To Be Created | Artifact not yet built |
-| ✅ Complete | Implemented and validated |
-| 🔄 In Progress | Currently being worked on |
+
 
 **Current Overall Status:** Project 2 is in **Planning Phase** - 0% complete, 100% scoped.
-
----
-
-**Document Version:** 1.0  
-**Last Updated:** [Your Date]  
-**Maintainer:** [Your Name]
 
 
 
@@ -374,7 +350,8 @@ This project simulates real-world **supply chain and humanitarian logistics syst
 
 ## Project Status
 
-Completed as a structured SQL Data Warehousing and Analytics project with ongoing enhancements for advanced analytics and BI integration.
+Project 1 is completed as a structured SQL Data Warehousing and Analytics project with ongoing enhancements for advanced analytics and BI integration.
+Project 2 is in **Planning Phase** - 0% complete, 100% scoped.
 
 ---
 
