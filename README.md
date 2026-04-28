@@ -278,7 +278,7 @@ Completed as a structured SQL Data Warehousing and Analytics project with ongoin
 ## Author
 Geu Kuei
 
-Data Analyst | Data Engineer (Aspiring) | Monitoring & Evaluation (M&E) | Public Health & Education Data  
+Data Analyst | Data Engineer (Aspiring) | Monitoring & Evaluation (M&E) | Public Health & Education Data | 
 ALX Data Engineering Fellow
 
 ## License
