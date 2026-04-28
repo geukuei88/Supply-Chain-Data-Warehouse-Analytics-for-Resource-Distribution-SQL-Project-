@@ -143,6 +143,84 @@ These indexes improve:
 - Dashboard responsiveness  
 
 ---
+## KPI Analytical Layer: Cross-Project Harmony
+
+This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Every business question from the warehouse project is explicitly addressed in the analytics and ML layers below.
+
+---
+
+### Part A: Descriptive Analytics (Project 1 KPIs → Project 2 Views & Dashboards)
+
+| Project 1 KPI Question | Project 2 Answer Location | Status |
+|------------------------|---------------------------|--------|
+| **1a. Monthly/yearly sales trends** | `gold.vw_sales_analysis` + Power BI "Monthly Sales Trend" chart | ✅ Complete |
+| **1b. Regions with highest revenue** | `gold.vw_sales_analysis` + Power BI "Sales by Region" map | ✅ Complete |
+| **1c. Top 10 best-selling products** | `gold.vw_sales_analysis` + Power BI "Top 10 Products" table | ✅ Complete |
+| **1d. Product categories contributing most to profit** | `gold.vw_sales_analysis` + Power BI "Profit by Category" bar chart | ✅ Complete |
+| **1e. Average order value by segment** | Calculated metric in `gold.vw_sales_analysis` | ✅ Complete |
+| **2a. Most profitable sub-categories** | Power BI "Product Profitability" page | ✅ Complete |
+| **2b. Products frequently bought together** | *ML Section 4 (Recommendation System)* | 🔄 ML Phase |
+| **2c. Products with highest discount rates** | `gold.vw_sales_analysis` + filter by discount column | ✅ Complete |
+| **2d. Profit margin by category** | Calculated column in `gold.vw_sales_analysis` | ✅ Complete |
+| **2e. Loss leaders (negative profit)** | Power BI "Loss-making Products" filter | ✅ Complete |
+| **3a. Average shipping time by ship mode** | *ML Section 5 (Shipping Mode Classification)* | 🔄 ML Phase |
+| **3e. Ship mode most used by each segment** | `gold.vw_sales_analysis` crosstab query | ✅ Complete |
+| **4a. Cities with most profit** | `gold.vw_sales_analysis` + city-level aggregation | ✅ Complete |
+| **4b. Sales distribution across states** | Power BI "Regional Distribution" map | ✅ Complete |
+| **5a. Seasonal sales patterns** | Time series decomposition (ML Section 1) | 🔄 ML Phase |
+| **5b. Months with highest/lowest sales** | `gold.vw_sales_analysis` + monthly aggregation | ✅ Complete |
+| **5c. Discounts by time of year** | Power BI "Discount vs Time" scatter plot | ✅ Complete |
+| **Discount impact on profit** | Power BI "Discount vs Profit" scatter plot | ✅ Complete |
+| **Loss-making vs profitable segments** | Power BI "Profitability Analysis" page | ✅ Complete |
+| **Customer contribution to revenue** | Power BI "Customer Contribution" Pareto chart | ✅ Complete |
+
+---
+
+### Part B: Machine Learning Extensions (Project 2 Original Work)
+
+| ML Task | Target Variable | Business Value | Status |
+|---------|----------------|----------------|--------|
+| **1. Sales Forecasting** | Sales (time series) | Predict next month's sales by category | 🔄 In Progress |
+| **2. Customer Segmentation** | Cluster labels | Identify high-value customer groups | 🔄 In Progress |
+| **3. Profit Prediction** | Profit (regression) | Predict order profitability, optimal discount | 🔄 In Progress |
+| **4. Product Recommendation** | Product associations | "Bought together" recommendations | 🔄 Planned |
+| **5. Shipping Mode Classification** | Ship Mode | Predict customer shipping preference | 🔄 Planned |
+| **6. Discount Optimization** | Discount (optimal) | Maximize profit via discount tuning | 🔄 Planned |
+| **7. Customer Churn Prediction** | Will order again? (binary) | Identify at-risk customers early | 🔄 Planned |
+
+---
+
+### Part C: Where to Find Everything
+
+#### SQL Views (in `gold` schema)
+- `vw_sales_analysis` — Primary BI dataset answering KPIs 1a, 1b, 1c, 1d, 1e, 2c, 2d, 2e, 4a, 4b, 5b
+
+#### Power BI Dashboard Pages
+| Page | Answers Project 1 KPIs |
+|------|------------------------|
+| Executive Overview | 1a, 1b, 1e, 5a, 5b |
+| Product Performance | 1c, 1d, 2a, 2d, 2e |
+| Customer Insights | 1e, 3e, customer contribution |
+| Profitability Analysis | Discount impact, loss leaders |
+| Geographic Analysis | 1b, 4a, 4b |
+
+#### Jupyter Notebooks (ML Phase)
+- `01_sales_forecasting.ipynb` → Answers 5a (seasonality), 1a (future trends)
+- `02_customer_segmentation.ipynb` → High-value customer profiles
+- `03_profit_prediction.ipynb` → Optimal discount analysis
+- `04_recommendation_system.ipynb` → Answers 2b (bought together)
+- `05_shipping_classification.ipynb` → Answers 3a (shipping time by mode)
+- `07_churn_prediction.ipynb` → Customer retention KPIs
+
+---
+
+### Part D: Explicit Cross-Project Mapping Summary
+
+
+
+
+
+
 
 ## KPI Analytical Layer
 
