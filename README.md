@@ -232,15 +232,18 @@ Discount optimization → ML Profit Prediction (Notebook 03)
 ### Part E: Validation Checklist for Evaluators
 
 - Every Project 1 KPI is explicitly listed above
-  Each KPI has a clear Project 2 artifact (view, dashboard, or ML model)
--  ML models directly extend descriptive answers into predictions
--  Power BI dashboards are mapped to specific PDF sections
--  SQL views support all aggregations needed for KPIs
+- Each KPI has a clear Project 2 artifact (view, dashboard, or ML model)
+- ML models directly extend descriptive answers into predictions
+- Power BI dashboards are mapped to specific PDF sections
+- SQL views support all aggregations needed for KPIs
 
 ---
 
 **Note on Two-Project Harmony:**  
-Project 1 delivered the data warehouse foundation. Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI) and adds predictive value (via ML models). This README serves as the **single source of truth** connecting both projects.
+Project 1 delivered the data warehouse foundation. 
+Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI) and 
+adds predictive value (via ML models). 
+This README serves as the **single source of truth** connecting both projects.
 
 
 
