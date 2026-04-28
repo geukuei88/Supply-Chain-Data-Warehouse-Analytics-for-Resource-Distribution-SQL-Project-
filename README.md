@@ -59,7 +59,9 @@ Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
 ## Data Model (Gold Layer - Star Schema)
 
-Full Star Schema Available on `/Docs/Star Schema.png
+Full Star Schema Available on `[View Star Schema](Docs/star_schema.drawio.png) 
+
+/Docs/Star Schema.png
 
 ### Fact Table
 
