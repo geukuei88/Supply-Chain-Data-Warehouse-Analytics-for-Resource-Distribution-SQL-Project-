@@ -97,7 +97,7 @@ Full Star Schema Available on `[View Star Schema](Docs/star_schema.drawio.png)
 
 ## Data Dictionary (Summary)
 
-> Full data dictionary available in `[View Data Dictionary](Docs/data_dictioanry.md)
+> Full data dictionary available in `[View Data Dictionary](Docs/data_dictionary.md)
 
 > /docs/Data Dictionary.md`
 
