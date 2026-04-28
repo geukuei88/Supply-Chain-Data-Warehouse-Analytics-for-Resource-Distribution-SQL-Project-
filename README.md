@@ -303,9 +303,9 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 
 ---
 
-### Screenhot of a Simple Query on **gold.vw_sales_analysis** Table
+This query answers KPI 1d: Product categories contributing most to profit, helping identify high-performing categories.
   
-![Top Performers Example](Docs/top_performers.png)
+![Profit by Product Category](Docs/profit_by_product_category.png)
 
 
 
