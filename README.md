@@ -38,8 +38,7 @@ It reflects real industry practices used in:
 
 [View Data Warehouse Layers](Docs/data_warehouse_layers.png)
 
-![Data Architecture](docs/architecture.png)  <!-- ADD YOUR ARCHITECTURE DIAGRAM HERE -->
-
+[![Data Warehouse Layers](docs/data_warehouse_layers.png)](docs/data_warehouse_layers.png)
 ### Data Flow
 Source Data → Bronze Layer → Silver Layer → Gold Layer → Analytics & BI
 
