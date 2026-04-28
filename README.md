@@ -34,7 +34,6 @@ It reflects real industry practices used in:
 ---
 
 ## Data Architecture
-5331deda20a347de04ebfc738376656a76a53d77
 
 ![Data Architecture](docs/architecture.png)  <!-- ADD YOUR ARCHITECTURE DIAGRAM HERE -->
 
