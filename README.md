@@ -101,7 +101,7 @@ Full Star Schema available on `[View Star Schema](Docs/star_schema.drawio.png)
 
 ## Data Dictionary (Summary)
 
-> Full data dictionary available in `[View Data Dictionary](Docs/data_dictionary.md)
+> Full data dictionary available on `[View Data Dictionary](Docs/data_dictionary.md)
 
 ### fact_orders
 - Sales → Revenue per transaction  
