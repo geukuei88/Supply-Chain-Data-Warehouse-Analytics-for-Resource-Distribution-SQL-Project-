@@ -8,6 +8,20 @@ It models a real-world **supply chain and resource distribution system**, transf
 
 The system follows a **Medallion Architecture (Bronze → Silver → Gold)** and implements a **Star Schema data model with surrogate keys, KPI analytics, and BI-ready views**.
 
+
+---
+
+## Project Highlights
+
+- Built a full **Medallion Data Warehouse (Bronze → Silver → Gold)**
+- Designed a **Star Schema with Fact & Dimension tables**
+- Created a **KPI framework mapped to business questions**
+- Developed a **scalable analytics roadmap (SQL → BI → ML)**
+- Structured project into **Data Engineering + Data Science layers**
+
+This project demonstrates the full pipeline:
+**Raw Data → Clean Data → Analytics → Predictions**
+
 ---
 
 ## Why This Project Matters
