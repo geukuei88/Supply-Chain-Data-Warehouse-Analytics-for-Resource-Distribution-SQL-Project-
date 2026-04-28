@@ -143,7 +143,7 @@ These indexes improve:
 - Dashboard responsiveness  
 
 
-## KPI Analytical Layer: Cross-Project Harmony
+## KPI Coverage & Analytics Roadmap
 
 This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Business questions are explicitly answered using either **SQL/BI (Descriptive)** or **Machine Learning (Predictive)** methods.
 
