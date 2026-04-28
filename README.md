@@ -303,7 +303,8 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 
 ---
 
-- **Simple Query Example (Screenshot)**
+- ### Simple Query Example (Screenshot)
+  
 ![Top Performers Example](Docs/top_performers.png)
 
 
