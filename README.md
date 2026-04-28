@@ -367,14 +367,6 @@ This project simulates real-world **supply chain and humanitarian logistics syst
 
 ---
 
-## Project Status
-
-- **Project 1** is **completed** as a structured SQL Data Warehousing with ongoing enhancements for advanced
-  analytics and BI integration.
-- **Project 2** is in **Planning Phase** - 0% complete, 100% scoped.
-
----
-
 ## Author
 Geu Kuei
 
