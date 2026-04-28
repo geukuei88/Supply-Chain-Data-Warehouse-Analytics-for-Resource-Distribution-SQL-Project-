@@ -295,7 +295,7 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 
 ---
 
-### 🔗 Project Integration: Current State vs Roadmap
+### Project Integration: Current State vs Roadmap
 
 - **Project 1 (Data Warehouse)**  
   Fully implemented and serves as the foundation of this project.  
@@ -306,7 +306,6 @@ The referenced **Project 2** is in **planning phase**.All items below are define
   It will consume the data warehouse to:
   - Answer business KPIs using SQL and Power BI (descriptive analytics)
   - Extend insights using machine learning models (predictive analytics)
-
 Together, these projects form a complete data pipeline:  
 **Raw Data → Data Warehouse → Analytics → Predictions**
 
