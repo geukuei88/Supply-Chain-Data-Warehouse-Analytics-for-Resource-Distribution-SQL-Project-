@@ -301,42 +301,24 @@ The referenced **Project 2** is in **planning phase**.All items below are define
   Fully implemented, operational and serves as the foundation for project 2.  
   It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
 
+--
+
+**Example Output: Monthly Sales Trend**
+
+This query answers KPI 1a: Monthly/Yearly Sales Trends, showing how revenue evolves over time.
+
+![Monthly Sales Trends](Docs/monthly_sales_trends.png)
+
+
 ---
+
+**Example Output: Profit by Product Category**
 
 This query answers KPI 1d: Product categories contributing most to profit, helping identify high-performing categories.
   
 ![Profit by Product Category](Docs/profit_by_product_category.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--
 
 - **Project 2 (Analytics & Machine Learning)**  
   Currently in the planning phase.  
