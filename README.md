@@ -34,7 +34,7 @@ It reflects real industry practices used in:
 ---
 
 ## Data Architecture
-![Data Warehouse Layers](Docs/data_warehouse_layers.png) 
+![Data Architecture Approach](Docs/data_architecture_approach.png) 
 
 [View Data Warehouse Layers](Docs/data_warehouse_layers.png)
 
