@@ -307,7 +307,7 @@ The referenced **Project 2** is in **planning phase**.All items below are define
 
 This query answers **KPI 1a: Monthly/Yearly Sales Trends**, showing how revenue evolves over time.
 
-![Monthly Sales Trends](Docs/monthly_sales_trends.png)
+![Monthly Sales Trend](Docs/monthly_sales_trend.png)
 
 
 ---
