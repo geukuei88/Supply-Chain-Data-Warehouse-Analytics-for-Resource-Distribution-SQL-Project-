@@ -161,8 +161,17 @@ These indexes improve:
 
 This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (Data Science Capstone)** deliverables. Business questions are explicitly answered using either **SQL/BI (Descriptive)** or **Machine Learning (Predictive)** methods.
 
-This referred **Project 2** is in **planning phase**. All items below are scoped and ready for implementation.
+The referenced **Project 2** is in **planning phase**.All items below are defined, with implementation prioritized in phases..
 
+---
+
+### Section Guide
+
+- **Part A** → SQL & Power BI (Descriptive Analytics)
+- **Part B** → Machine Learning (Predictive Analytics)
+- **Part C–E** → Implementation Assets (Views, Dashboards, Notebooks)
+- **Part F** → Execution Roadmap
+- **Part G** → Validation Checklist
 ---
 
 ### Part A: SQL / Power BI Layer (Descriptive Analytics)
@@ -204,7 +213,6 @@ This referred **Project 2** is in **planning phase**. All items below are scoped
 | **Which products will be top sellers next month?** | Time Series + Ranking | Product Sales Forecast | `01_sales_forecasting.ipynb` |  Planned |
 | **Can we segment customers into distinct groups?** | Clustering (K-Means, DBSCAN) | Customer Segment Labels | `02_customer_segmentation.ipynb` |  Planned |
 | **What are characteristics of high-value customers?** | Clustering + Profile Analysis | Customer Cluster Profiles | `02_customer_segmentation.ipynb` |  Planned |
-| **Which customers are likely to churn?** | Binary Classification | Will Order Again? (Yes/No) | `07_churn_prediction.ipynb` |  Planned |
 | **Can we predict if an order will be profitable?** | Classification (Binary) | Profit > 0 (Yes/No) | `03_profit_prediction.ipynb` |  Planned |
 | **What factors most influence profit?** | Feature Importance (Random Forest / SHAP) | Profit Drivers | `03_profit_prediction.ipynb` |  Planned |
 | **What is optimal discount for maximum profit?** | Optimization / Regression | Discount % | `06_discount_optimization.ipynb` |  Planned |
@@ -212,7 +220,7 @@ This referred **Project 2** is in **planning phase**. All items below are scoped
 | **What products should we recommend to a customer?** | Collaborative Filtering / Association Rules | Product Recommendations | `04_recommendation_system.ipynb` |  Planned |
 | **Can we predict which shipping mode a customer will choose?** | Multi-Class Classification | Ship Mode (Standard, Express, etc.) | `05_shipping_classification.ipynb` |  Planned |
 | **What factors influence shipping mode selection?** | Feature Importance | Key Drivers | `05_shipping_classification.ipynb` |  Planned |
-| **Which customers are at risk of not ordering again?** | Binary Classification | Will Order Again? (Yes/No) | `07_churn_prediction.ipynb` |  Planned |
+| **Which customers are likely to churn (not order again)?** | Binary Classification | Will Order Again? (Yes/No) | `07_churn_prediction.ipynb` |  Planned |
 | **What factors indicate a customer might churn?** | Feature Importance + Survival Analysis | Churn Signals | `07_churn_prediction.ipynb` |  Planned |
 | **Can we identify churn signals early?** | Early Warning System | Days to Churn | `07_churn_prediction.ipynb` |  Planned |
 
@@ -273,7 +281,7 @@ This referred **Project 2** is in **planning phase**. All items below are scoped
 
 **SQL / Power BI Layer (Descriptive)**
 -  Every SQL-based KPI (1a,1b,1c,1d,1e,2a,2c,2d,2e,3e,4a,4b,5b,5c) has a corresponding view or dashboard
--  gold.vw_sales_analysis` contains all necessary columns (sales, profit, discount, product, region, segment, date)
+-  gold.vw_sales_analysis contains all necessary columns (sales, profit, discount, product, region, segment, date)
 -  Power BI dashboards are mapped to specific KPI questions
 
 **Machine Learning Layer (Predictive)**
@@ -287,12 +295,20 @@ This referred **Project 2** is in **planning phase**. All items below are scoped
 
 ---
 
-### Note on Two-Project Harmony:  
-- Project 1 delivered the data warehouse foundation. 
-- Project 2 consumes that warehouse to answer descriptive KPIs (via SQL + Power BI)
- and adds predictive value (via ML models). 
-- This README serves as the **single source of truth** connecting both projects.
+### 🔗 Project Integration: Current State vs Roadmap
 
+- **Project 1 (Data Warehouse)**  
+  Fully implemented and serves as the foundation of this project.  
+  It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
+
+- **Project 2 (Analytics & Machine Learning)**  
+  Currently in the planning phase.  
+  It will consume the data warehouse to:
+  - Answer business KPIs using SQL and Power BI (descriptive analytics)
+  - Extend insights using machine learning models (predictive analytics)
+
+Together, these projects form a complete data pipeline:  
+**Raw Data → Data Warehouse → Analytics → Predictions**
 
 ## Tools & Technologies
 
