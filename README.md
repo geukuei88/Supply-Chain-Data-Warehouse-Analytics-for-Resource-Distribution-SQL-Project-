@@ -301,7 +301,8 @@ The referenced **Project 2** is in **planning phase**.All items below are define
   Fully implemented, operational and serves as the foundation for project 2.  
   It provides structured, clean, and analytics-ready data using a Medallion Architecture and Star Schema design.
 
-
+---
+![Top Performers Example](Docs/top_performers.png)
 
 
 
