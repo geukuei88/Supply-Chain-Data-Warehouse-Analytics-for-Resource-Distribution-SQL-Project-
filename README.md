@@ -153,26 +153,26 @@ This section maps **Project 1 (Data Warehouse)** KPI questions to **Project 2 (D
 
 | Project 1 KPI Question | Project 2 Answer Location | Status |
 |------------------------|---------------------------|--------|
-| **1a. Monthly/yearly sales trends** | `gold.vw_sales_analysis` + Power BI "Monthly Sales Trend" chart | ✅ Complete |
-| **1b. Regions with highest revenue** | `gold.vw_sales_analysis` + Power BI "Sales by Region" map | ✅ Complete |
-| **1c. Top 10 best-selling products** | `gold.vw_sales_analysis` + Power BI "Top 10 Products" table | ✅ Complete |
+| **1a. Monthly/yearly sales trends** | `gold.vw_sales_analysis` + Power BI "Monthly Sales Trend" chart | Complete |
+| **1b. Regions with highest revenue** | `gold.vw_sales_analysis` + Power BI "Sales by Region" map |  Complete |
+| **1c. Top 10 best-selling products** | `gold.vw_sales_analysis` + Power BI "Top 10 Products" table | Complete |
 | **1d. Product categories contributing most to profit** | `gold.vw_sales_analysis` + Power BI "Profit by Category" bar chart | ✅ Complete |
-| **1e. Average order value by segment** | Calculated metric in `gold.vw_sales_analysis` | ✅ Complete |
-| **2a. Most profitable sub-categories** | Power BI "Product Profitability" page | ✅ Complete |
+| **1e. Average order value by segment** | Calculated metric in `gold.vw_sales_analysis` | Complete |
+| **2a. Most profitable sub-categories** | Power BI "Product Profitability" page | Complete |
 | **2b. Products frequently bought together** | *ML Section 4 (Recommendation System)* | 🔄 ML Phase |
-| **2c. Products with highest discount rates** | `gold.vw_sales_analysis` + filter by discount column | ✅ Complete |
-| **2d. Profit margin by category** | Calculated column in `gold.vw_sales_analysis` | ✅ Complete |
-| **2e. Loss leaders (negative profit)** | Power BI "Loss-making Products" filter | ✅ Complete |
+| **2c. Products with highest discount rates** | `gold.vw_sales_analysis` + filter by discount column | Complete |
+| **2d. Profit margin by category** | Calculated column in `gold.vw_sales_analysis` | Complete |
+| **2e. Loss leaders (negative profit)** | Power BI "Loss-making Products" filter | Complete |
 | **3a. Average shipping time by ship mode** | *ML Section 5 (Shipping Mode Classification)* | 🔄 ML Phase |
-| **3e. Ship mode most used by each segment** | `gold.vw_sales_analysis` crosstab query | ✅ Complete |
-| **4a. Cities with most profit** | `gold.vw_sales_analysis` + city-level aggregation | ✅ Complete |
-| **4b. Sales distribution across states** | Power BI "Regional Distribution" map | ✅ Complete |
-| **5a. Seasonal sales patterns** | Time series decomposition (ML Section 1) | 🔄 ML Phase |
-| **5b. Months with highest/lowest sales** | `gold.vw_sales_analysis` + monthly aggregation | ✅ Complete |
-| **5c. Discounts by time of year** | Power BI "Discount vs Time" scatter plot | ✅ Complete |
-| **Discount impact on profit** | Power BI "Discount vs Profit" scatter plot | ✅ Complete |
-| **Loss-making vs profitable segments** | Power BI "Profitability Analysis" page | ✅ Complete |
-| **Customer contribution to revenue** | Power BI "Customer Contribution" Pareto chart | ✅ Complete |
+| **3e. Ship mode most used by each segment** | `gold.vw_sales_analysis` crosstab query | Complete |
+| **4a. Cities with most profit** | `gold.vw_sales_analysis` + city-level aggregation | Complete |
+| **4b. Sales distribution across states** | Power BI "Regional Distribution" map | Complete |
+| **5a. Seasonal sales patterns** | Time series decomposition (ML Section 1) | ML Phase |
+| **5b. Months with highest/lowest sales** | `gold.vw_sales_analysis` + monthly aggregation | Complete |
+| **5c. Discounts by time of year** | Power BI "Discount vs Time" scatter plot | Complete |
+| **Discount impact on profit** | Power BI "Discount vs Profit" scatter plot | Complete |
+| **Loss-making vs profitable segments** | Power BI "Profitability Analysis" page |  Complete |
+| **Customer contribution to revenue** | Power BI "Customer Contribution" Pareto chart |  Complete |
 
 ---
 
