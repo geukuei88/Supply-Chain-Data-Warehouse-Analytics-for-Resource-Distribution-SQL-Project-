@@ -255,7 +255,7 @@ This referred **Project 2** is in **planning phase**. All items below are scoped
 
 ---
 
-### Part G: Validation Checklist for Evaluators (Upon Completion)
+### Part G: Validation Checklist for Evaluation once Completed
 
 **SQL / Power BI Layer (Descriptive)**
 -  Every SQL-based KPI (1a,1b,1c,1d,1e,2a,2c,2d,2e,3e,4a,4b,5b,5c) has a corresponding view or dashboard
