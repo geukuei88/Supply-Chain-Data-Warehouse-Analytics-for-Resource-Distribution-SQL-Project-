@@ -17,7 +17,6 @@ SELECT
     ROW_NUMBER() OVER (ORDER BY Customer_ID) AS Customer_Key,
     Customer_ID,
     Customer_Name,
-    Region,
     Segment,
     City,
     State,
@@ -29,14 +28,6 @@ FROM silver.Crm_Customers;
 
 /* ============================================================
    GOLD LAYER: DIMENSION TABLE - PRODUCTS
-   ------------------------------------------------------------
-   Purpose:
-   - Create a product dimension table for analytics
-   - Generate surrogate key (Product_Key)
-   - Store product classification attributes
-
-   Source:
-   - silver.Erp_Products
    ============================================================ */
 
 IF OBJECT_ID('gold.dim_products', 'U') IS NOT NULL
@@ -55,18 +46,6 @@ FROM silver.Erp_Products;
 
 /* ============================================================
    GOLD LAYER: FACT TABLE - ORDERS
-   ------------------------------------------------------------
-   Purpose:
-   - Create central fact table for sales transactions
-   - Link to dimension tables using surrogate keys
-   - Store measurable business metrics
-
-   Source:
-   - silver.Erp_Orders
-
-   Joins:
-   - Customer_ID → dim_customers
-   - Product_ID  → dim_products
    ============================================================ */
 
 IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
@@ -85,7 +64,6 @@ SELECT
     o.Quantity,
     o.Discount,
     o.Profit
-
 INTO gold.fact_orders
 FROM silver.Erp_Orders o
 
@@ -95,20 +73,15 @@ LEFT JOIN gold.dim_customers dc
 LEFT JOIN gold.dim_products dp
     ON o.Product_ID = dp.Product_ID;
 
-GO
-
 
 
 /* ============================================================
-   GOLD LAYER: ANALYTICAL VIEW - SALES ANALYSIS
-   ------------------------------------------------------------
-   Purpose:
-   - Provide a business-friendly dataset
-   - Combine fact and dimension tables
-   - Enable reporting and dashboarding
+   IMPORTANT: START NEW BATCH FOR VIEW
+   ============================================================ */
+GO
 
-   Output:
-   - Flattened dataset for analysis (star schema view)
+/* ============================================================
+   GOLD LAYER: ANALYTICAL VIEW - SALES ANALYSIS
    ============================================================ */
 
 CREATE OR ALTER VIEW gold.vw_sales_analysis AS
@@ -121,9 +94,12 @@ SELECT
     c.Customer_Name,
     c.Region,
     c.Segment,
+    c.City,
+    c.State,
 
     p.Product_Name,
     p.Category,
+    p.Sub_Category,
 
     f.Sales,
     f.Quantity,
@@ -135,42 +111,42 @@ JOIN gold.dim_customers c
     ON f.Customer_Key = c.Customer_Key
 JOIN gold.dim_products p
     ON f.Product_Key = p.Product_Key;
+GO
 
 
 
 /* ============================================================
    PERFORMANCE OPTIMIZATION: INDEXING
-   ------------------------------------------------------------
-   Purpose:
-   - Improve query performance on fact table joins
-   - Optimize filtering and aggregation operations
    ============================================================ */
 
--- =====================================
--- INDEX: Customer_Key
--- =====================================
-IF EXISTS (
-    SELECT 1 
-    FROM sys.indexes 
-    WHERE name = 'idx_fact_customer_key'
-      AND object_id = OBJECT_ID('gold.fact_orders')
-)
-DROP INDEX idx_fact_customer_key ON gold.fact_orders;
+-- Index: Customer_Key
+IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
+BEGIN
+    IF EXISTS (
+        SELECT 1 
+        FROM sys.indexes 
+        WHERE name = 'idx_fact_customer_key'
+          AND object_id = OBJECT_ID('gold.fact_orders')
+    )
+        DROP INDEX idx_fact_customer_key ON gold.fact_orders;
 
-CREATE INDEX idx_fact_customer_key 
-ON gold.fact_orders(Customer_Key);
+    CREATE INDEX idx_fact_customer_key 
+    ON gold.fact_orders(Customer_Key);
+END
+GO
 
+-- Index: Product_Key
+IF OBJECT_ID('gold.fact_orders', 'U') IS NOT NULL
+BEGIN
+    IF EXISTS (
+        SELECT 1 
+        FROM sys.indexes 
+        WHERE name = 'idx_fact_product_key'
+          AND object_id = OBJECT_ID('gold.fact_orders')
+    )
+        DROP INDEX idx_fact_product_key ON gold.fact_orders;
 
--- =====================================
--- INDEX: Product_Key
--- =====================================
-IF EXISTS (
-    SELECT 1 
-    FROM sys.indexes 
-    WHERE name = 'idx_fact_product_key'
-      AND object_id = OBJECT_ID('gold.fact_orders')
-)
-DROP INDEX idx_fact_product_key ON gold.fact_orders;
-
-CREATE INDEX idx_fact_product_key 
-ON gold.fact_orders(Product_Key);
+    CREATE INDEX idx_fact_product_key 
+    ON gold.fact_orders(Product_Key);
+END
+GO
