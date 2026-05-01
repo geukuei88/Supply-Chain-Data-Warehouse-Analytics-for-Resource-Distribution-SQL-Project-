@@ -18,7 +18,10 @@ SELECT
     Customer_ID,
     Customer_Name,
     Region,
-    Segment
+    Segment,
+    City,
+    State,
+    Region
 INTO gold.dim_customers
 FROM silver.Crm_Customers;
 
