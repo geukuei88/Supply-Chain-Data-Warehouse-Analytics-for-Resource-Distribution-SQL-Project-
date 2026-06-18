@@ -390,7 +390,7 @@ This project simulates real-world **supply chain and humanitarian logistics syst
 ## Author
 Geu Kuei
 
-Data Analyst | Data Engineer (Aspiring) | Monitoring & Evaluation (M&E) | Public Health & Education Data | 
+Mathematics Educator | Public Health & Education Data | 
 ALX Data Engineering Fellow
 
 ## License
